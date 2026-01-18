@@ -20,11 +20,11 @@ export const AlcoveSection: React.FC = () => {
         
         after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:rounded-[100%]
         after:bottom-[-65%] after:w-[220%] after:aspect-square md:after:w-[140%] md:after:bottom-[-75%]
-        after:z-10 after:shadow-[0_-1px_3px_rgba(255,255,255,0.8),0_-4px_20px_rgba(100,100,255,0.3)] after:opacity-80
+        after:z-10 after:shadow-[0_-1px_3px_rgba(255,200,200,0.8),0_-4px_20px_rgba(255,50,50,0.3)] after:opacity-80
       ">
 
         {/* Atmosphere Glow (Above Rim) */}
-        <div className="hero__atmosphere absolute bottom-[-50px] left-1/2 -translate-x-1/2 w-[100%] h-[400px] bg-gradient-to-t from-[rgba(100,120,255,0.15)] to-transparent blur-[80px] z-20 mix-blend-screen pointer-events-none" />
+        <div className="hero__atmosphere absolute bottom-[-50px] left-1/2 -translate-x-1/2 w-[100%] h-[400px] bg-gradient-to-t from-[rgba(255,50,50,0.35)] to-transparent blur-[80px] z-20 mix-blend-screen pointer-events-none" />
 
         {/* Stars (CSS Pattern) */}
         <div className="absolute inset-0 opacity-40 z-0"
@@ -64,7 +64,7 @@ export const AlcoveSection: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="bg-gradient-to-r from-[#60a5fa] via-[#a855f7] to-[#ec4899] bg-clip-text text-transparent inline-block pb-1"
+            className="bg-gradient-to-r from-[#ef4444] via-[#ea580c] to-[#f59e0b] bg-clip-text text-transparent inline-block pb-1"
           >
             Within the Next 30 Days?
           </motion.span>

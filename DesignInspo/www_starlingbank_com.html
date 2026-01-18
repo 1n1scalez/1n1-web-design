@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" data-next-head="" />
+    <meta name="viewport" content="width=device-width" data-next-head="" />
+    <link rel="preload" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI2IiBoZWlnaHQ9IjI1IiB2aWV3Qm94PSIwIDAgMTI2IDI1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNy44NjM2MiAwLjgxODQyQzExLjI4MDggMC44MTg0MiAxNC40OTMxIDIuOTgxMDkgMTQuNDkzMSA3LjE1ODg2SDEwLjYzM0MxMC42MzMgNS4zMTQwMyA5LjI2MDk3IDQuMzUxMzMgNy45Mzk0MyA0LjM1MTMzQzYuNTAwOTMgNC4zNTEzMyA1LjI1MjU3IDUuMzEzNjUgNS4yNTIxMiA2LjYzMTU0SDUuMjUyODFDNS4yNTIxMSAxMS41Mzc1IDE2LjgwOTEgOC4wMzI0NiAxNi44MDkxIDE2LjYzOTVWMTYuNjQxNkMxNi44MDkxIDIxLjAyMjUgMTMuMjIgMjQuMTA5NCA4LjM3ODc1IDI0LjEwOTRDMy4xNjI3OCAyNC4xMDk0IC0wLjYwMzk1MyAyMC43MjA0IDAuMDgwMzE1NiAxNC44NDMySDQuMTA2NzFDMy42NTk2NiAxOC4wMzkgNS4wMTA3MSAyMC43MjA0IDguMzgzNjkgMjAuNzIwNEMxMS4wODc4IDIwLjcyMDQgMTIuNzAyMSAxOC45Mzc1IDEyLjcwMjEgMTYuNzk3N0MxMi43MDIxIDExLjI4ODIgMS4yODc1IDE1LjQ1MDkgMS4yODc0NyA2LjYzMzY5QzEuMjg3NDcgMy4zNjMwMiA0LjQ0NjQyIDAuODE4NDIzIDcuODYzNjIgMC44MTg0MloiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZD0iTTExNS45NDkgMC44OTg5MzJDMTIxLjM3MyAwLjg5ODk0NiAxMjQuNDQxIDQuMjA5NTMgMTI1LjQzMSA3LjgzNzE5SDEyMC44OUMxMjAuNDA2IDYuNjMwMTEgMTE5LjI1MiA0LjY4MTI0IDExNS45NDkgNC42ODEyNEMxMTIuNjQ2IDQuNjgxMjUgMTEwLjExMiA3LjM5NCAxMTAuMTEyIDEyLjUwMzhDMTEwLjExMiAxNy42MTM2IDExMi41OTIgMjAuMzI1NiAxMTUuOTQ5IDIwLjMyNTZDMTE5LjMwNiAyMC4zMjU2IDEyMS41OTEgMTguMzAwNSAxMjEuNzU0IDE0Ljk2NjRIMTE1LjUxN1YxMS4xMjg2SDEyNS44OTVDMTI2LjgyMiAyMC4wODQ4IDEyMS40NDggMjQuMTA5NCAxMTUuOTUgMjQuMTA5NEMxMTAuNDUzIDI0LjEwOTQgMTA1LjkwOCAxOS45NjU4IDEwNS45MDggMTIuNTAzOEMxMDUuOTA4IDUuMDQxODEgMTEwLjUyNiAwLjg5ODkzMiAxMTUuOTQ5IDAuODk4OTMyWiIgZmlsbD0iIzMyMUUzNyIvPgo8cGF0aCBkPSJNMzAuNzM5MSA1LjE4MzU4SDI1LjE0NTVWMjMuNjk0NkgyMS4xMDY1VjUuMTgzNThIMTUuNTQ0NVYxLjMxNTA2SDMwLjczOTFWNS4xODM1OFoiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni45NTEzIDIzLjY5NDZINDIuNTk2NEw0MS4zMDI5IDE5LjM3NzlIMzMuNzkyN0wzMi40OTkyIDIzLjY5NDZIMjguMjcwN0wzNS43NDg3IDEuMzE1MDZIMzkuNTM1OEw0Ni45NTEzIDIzLjY5NDZaTTM0LjYxMzggMTUuNTQxNUg0MC4zMjQ2TDM3LjUxNjYgNi43MTcwNkwzNC42MTM4IDE1LjU0MTVaIiBmaWxsPSIjMzIxRTM3Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTYuMzM5NiAxLjMxNDM2QzU2LjMzOTYgMS4zMTQzNiA2My43NTUyIDEuMjQxNyA2My43NTUyIDcuNTgxMzlDNjMuNzU1MiAxMC4zMTM0IDYyLjM3ODIgMTEuODk2NyA2MC44MTAzIDEyLjgxNDRINjAuODExQzYyLjU0MzEgMTMuNjg4OCA2My43NTU4IDE1LjY3NDcgNjMuNzU1OCAxNy43MDQxVjIzLjY5NDZINTkuNjg1MlYxOC4zNzg5QzU5LjY4NTIgMTYuNTAxMyA1OC4xOTM4IDE0Ljk4IDU2LjM0MDMgMTQuOTc2NEw1Mi41Njg3IDE0Ljk2NjRWMjMuNjkzOUg0OC41NjEzVjEuMzE0MzZINTYuMzM5NlpNNTIuNTY4NyAxMS4xMjkzSDU2LjM0MDNWMTEuMTNDNTYuMzQwMyAxMS4xMyA1OS42ODUyIDExLjEyOTkgNTkuNjg1MiA4LjE0MDczQzU5LjY4NTIgNS4xNTE1MyA1Ni4zNDAzIDUuMTUxNSA1Ni4zNDAzIDUuMTUxNUg1Mi41Njg3VjExLjEyOTNaIiBmaWxsPSIjMzIxRTM3Ii8+CjxwYXRoIGQ9Ik04NS43MDYyIDIzLjY5NDZIODEuNjY4VjEuMzE1MDZIODUuNzA2MlYyMy42OTQ2WiIgZmlsbD0iIzMyMUUzNyIvPgo8cGF0aCBkPSJNOTkuOTAyOCAxNS45ODk3VjEuMzE1MDZIMTAzLjY1OFYyMy42OTQ2SDEwMC4wNjFMOTIuMjE5MyA4LjMxNjc4TDkyLjIzOTYgMjMuNjk0Nkg4OC40NjNWMS4zMTUwNkg5Mi40MDczTDk5LjkwMjggMTUuOTg5N1oiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZD0iTTcwLjU0NiAxOS44MjYxSDc5LjI1NDNWMjMuNjkzOUg2Ni41MTRWMS4zMTUwNkg3MC41NDZWMTkuODI2MVoiIGZpbGw9IiMzMjFFMzciLz4KPC9zdmc+Cg==" as="image" data-next-head="" />
+    <link rel="preload" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDIiIGhlaWdodD0iNDIiIHZpZXdCb3g9IjAgMCA0MiA0MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjEiIGN5PSIyMSIgcj0iMjAiIHN0cm9rZT0iIzE5Mjg1MiIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjEyIiB5PSIxNSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMTkyODUyIi8+CjxyZWN0IHg9IjEyIiB5PSIyMCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMTkyODUyIi8+CjxyZWN0IHg9IjEyIiB5PSIyMCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMTkyODUyIi8+CjxyZWN0IHg9IjEyIiB5PSIyNSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMTkyODUyIi8+Cjwvc3ZnPgo=" as="image" data-next-head="" />
+    <title data-next-head="">
+      Noteworthy | Starling Blog | Starling
+    </title>
+    <meta name="title" content="Noteworthy | Starling Blog | Starling" data-next-head="" />
+    <meta name="description" content="Noteworthy brings you stories and guides, explainers and interviews. Explore money topics, including budgeting and saving, and real-life &#39;money truths&#39;." data-next-head="" />
+    <meta property="og:title" content="Noteworthy | Starling Blog | Starling" data-next-head="" />
+    <meta property="og:description" content="Noteworthy brings you stories and guides, explainers and interviews. Explore money topics, including budgeting and saving, and real-life &#39;money truths&#39;." data-next-head="" />
+    <meta property="og:type" content="website" data-next-head="" />
+    <meta property="og:locale" content="en_GB" data-next-head="" />
+    <meta property="og:url" content="https://www.starlingbank.com/blog/" data-next-head="" />
+    <meta property="og:site_name" content="Starling Bank" data-next-head="" />
+    <meta property="og:image" content="https://www.starlingbank.com/images/1024x512/3761d81129/noteworthy-share-image.jpg" data-next-head="" />
+    <meta property="og:image:secure_url" content="https://www.starlingbank.com/images/1024x512/3761d81129/noteworthy-share-image.jpg" data-next-head="" />
+    <meta name="twitter:card" content="summary_large_image" data-next-head="" />
+    <meta name="twitter:site" content="@starlingbank" data-next-head="" />
+    <meta name="twitter:title" content="Noteworthy | Starling Blog | Starling" data-next-head="" />
+    <meta name="twitter:image" content="https://www.starlingbank.com/images/1024x512/3761d81129/noteworthy-share-image.jpg" data-next-head="" />
+    <meta name="twitter:description" content="Noteworthy brings you stories and guides, explainers and interviews. Explore money topics, including budgeting and saving, and real-life &#39;money truths&#39;." data-next-head="" />
+    <meta property="fb:app_id" content="376576989343149" data-next-head="" />
+    <meta name="copyright" content="Starling Bank Limited" data-next-head="" />
+    <meta name="HandheldFriendly" content="true" data-next-head="" />
+    <meta name="apple-mobile-web-app-capable" content="yes" data-next-head="" />
+    <meta name="mobile-web-app-capable" content="yes" data-next-head="" />
+    <link rel="canonical" href="https://www.starlingbank.com/blog/" data-next-head="" />
+    <link rel="alternate" type="application/rss+xml" title="Starling Bank - Blog" href="/rss.xml" data-next-head="" />
+    <link rel="alternate" type="application/rss+xml" title="Starling Bank - News" href="/rss-news.xml" data-next-head="" />
+    <link rel="alternate" type="application/rss+xml" title="Starling Bank - Business Guides" href="/rss-business-guides.xml" data-next-head="" />
+    <script type="application/ld+json" data-next-head="">
+      {&#34;@context&#34;:&#34;http://schema.org&#34;,&#34;@type&#34;:&#34;Organization&#34;,&#34;@id&#34;:&#34;#organization&#34;,&#34;name&#34;:&#34;Starling Bank&#34;,&#34;url&#34;:&#34;https://www.starlingbank.com/&#34;,&#34;logo&#34;:&#34;https://www.starlingbank.com/media-library/sb-logo.png&#34;,&#34;sameAs&#34;:[&#34;https://www.facebook.com/StarlingBankUK&#34;,&#34;https://twitter.com/starlingbank&#34;,&#34;https://www.instagram.com/starlingbank&#34;,&#34;https://www.youtube.com/c/StarlingBankApp&#34;,&#34;https://www.linkedin.com/company/starling-bank&#34;]}
+    </script>
+    <script id="abTastyIds" data-nscript="beforeInteractive">
+      window.addEventListener(&#39;abtasty_executedCampaign&#39;, (event) =&gt; {
+  const { campaignId, variationId } = event.detail;
+  if (window.sessionStorage.setItem) {
+    const currentTestIds = JSON.parse(window.sessionStorage.getItem(&#39;onboardingTestIds&#39;) || &#39;{}&#39;);
+    const updatedTestIds = {...currentTestIds, [campaignId]: variationId}
+    window.sessionStorage.setItem(&#39;onboardingTestIds&#39;, JSON.stringify(updatedTestIds));
+  }
+});
+    </script>
+    <script id="0-abTastyTag" data-nscript="beforeInteractive">
+      function getCookie() {
+  var match = document.cookie.match(new RegExp(&#39;(^| )&#39; + &#39;StarlingBankCookiePreferences&#39; + &#39;=([^;]+)&#39;));
+  if (match) return match[2];
+}
+
+function writeABTastyTag() {
+  
+(function(){
+  var scriptTag = document.createElement(&#39;script&#39;);
+  scriptTag.src = &#39;https://try.abtasty.com/175b4d31fced26027b587a8ae6ceb1f4.js&#39;;
+  var targetElement = document.getElementById(&#39;0-abTastyTag&#39;);
+  targetElement.insertAdjacentElement(&#39;afterend&#39;, scriptTag);
+})()
+
+}
+
+var cookiePrefs = getCookie();
+if(cookiePrefs) {
+  var analyticsPref = JSON.parse(cookiePrefs).analytics;
+  if(analyticsPref) {
+    writeABTastyTag();
+  }
+}
+    </script>
+    <link rel="preload" href="/_next/static/css/9251dad5f1b1712d.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/9251dad5f1b1712d.css" data-n-g="" />
+    <link rel="preload" href="/_next/static/css/39559940030ac54e.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/39559940030ac54e.css" data-n-p="" />
+    <link rel="preload" href="/_next/static/css/f31f6ab4f05b5b5d.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/f31f6ab4f05b5b5d.css" data-n-p="" />
+    <link rel="preload" href="/_next/static/css/206ec8a578bd926b.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/206ec8a578bd926b.css" data-n-p="" />
+    <link rel="preload" href="/_next/static/css/21149171ac11cede.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/21149171ac11cede.css" data-n-p="" />
+    <noscript data-n-css="">
+    </noscript>
+    <script defer="" nomodule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js">
+    </script>
+    <script src="/_next/static/chunks/webpack-eae7df81c77b014e.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/framework-e9b40faac59132e2.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/main-42b393f02ec43118.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/pages/_app-261d3b691acbd79a.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/2285-67f7ef42e5163554.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/8588-b5194b139cd149a2.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/2117-70e68feffd2258f8.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/6299-a405f5f7745974a2.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/1909-95ff2cb1eb98bd99.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/8904-b5eb9e7e00b9f24a.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/2650-cd9bded88f732f9c.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/1693-6fe17d25ba3e0190.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/778-62acc2ddd3df52c7.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/4171-daff975d8d8e85a6.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/2711-462f57fcf4e3186e.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/5854-742ec19bb8a6944e.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/6443-ff8f04e5426b4cbf.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/1035-1926606f1e23b6cc.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/1927-acdd990b655a1438.js" defer="">
+    </script>
+    <script src="/_next/static/chunks/pages/blog-3dd59df413f87f01.js" defer="">
+    </script>
+    <script src="/_next/static/euQXb0TNRciAwoDChb8Ws/_buildManifest.js" defer="">
+    </script>
+    <script src="/_next/static/euQXb0TNRciAwoDChb8Ws/_ssgManifest.js" defer="">
+    </script>
+  </head>
+  <body>
+    <div id="__next">
+      <noscript>
+        &lt;img referrerPolicy=&#34;no-referrer-when-downgrade&#34; src=&#34;https://starlingbank.matomo.cloud/matomo.php?idsite=1&amp;amp;rec=1&#34; style=&#34;border:0&#34; alt=&#34;&#34;/&gt;
+      </noscript>
+      <section class="kpueyt1">
+        <nav aria-label="Main" data-orientation="horizontal" dir="ltr" class="kpueyt3" data-testid="siteHeader">
+          <div class="kpueyt4">
+            <div class="kpueyt5">
+              <div>
+                <a class="kpueyt0" href="#main-content">                Skip to main content
+</a>
+              </div>
+              <div class="kpueyt8 kpueyt7">
+                <a href="/" aria-label="Link to homepage">                <img alt="Starling Bank logo" width="126" height="25" decoding="async" data-nimg="1" class="kpueyte" style="color:transparent" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI2IiBoZWlnaHQ9IjI1IiB2aWV3Qm94PSIwIDAgMTI2IDI1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNy44NjM2MiAwLjgxODQyQzExLjI4MDggMC44MTg0MiAxNC40OTMxIDIuOTgxMDkgMTQuNDkzMSA3LjE1ODg2SDEwLjYzM0MxMC42MzMgNS4zMTQwMyA5LjI2MDk3IDQuMzUxMzMgNy45Mzk0MyA0LjM1MTMzQzYuNTAwOTMgNC4zNTEzMyA1LjI1MjU3IDUuMzEzNjUgNS4yNTIxMiA2LjYzMTU0SDUuMjUyODFDNS4yNTIxMSAxMS41Mzc1IDE2LjgwOTEgOC4wMzI0NiAxNi44MDkxIDE2LjYzOTVWMTYuNjQxNkMxNi44MDkxIDIxLjAyMjUgMTMuMjIgMjQuMTA5NCA4LjM3ODc1IDI0LjEwOTRDMy4xNjI3OCAyNC4xMDk0IC0wLjYwMzk1MyAyMC43MjA0IDAuMDgwMzE1NiAxNC44NDMySDQuMTA2NzFDMy42NTk2NiAxOC4wMzkgNS4wMTA3MSAyMC43MjA0IDguMzgzNjkgMjAuNzIwNEMxMS4wODc4IDIwLjcyMDQgMTIuNzAyMSAxOC45Mzc1IDEyLjcwMjEgMTYuNzk3N0MxMi43MDIxIDExLjI4ODIgMS4yODc1IDE1LjQ1MDkgMS4yODc0NyA2LjYzMzY5QzEuMjg3NDcgMy4zNjMwMiA0LjQ0NjQyIDAuODE4NDIzIDcuODYzNjIgMC44MTg0MloiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZD0iTTExNS45NDkgMC44OTg5MzJDMTIxLjM3MyAwLjg5ODk0NiAxMjQuNDQxIDQuMjA5NTMgMTI1LjQzMSA3LjgzNzE5SDEyMC44OUMxMjAuNDA2IDYuNjMwMTEgMTE5LjI1MiA0LjY4MTI0IDExNS45NDkgNC42ODEyNEMxMTIuNjQ2IDQuNjgxMjUgMTEwLjExMiA3LjM5NCAxMTAuMTEyIDEyLjUwMzhDMTEwLjExMiAxNy42MTM2IDExMi41OTIgMjAuMzI1NiAxMTUuOTQ5IDIwLjMyNTZDMTE5LjMwNiAyMC4zMjU2IDEyMS41OTEgMTguMzAwNSAxMjEuNzU0IDE0Ljk2NjRIMTE1LjUxN1YxMS4xMjg2SDEyNS44OTVDMTI2LjgyMiAyMC4wODQ4IDEyMS40NDggMjQuMTA5NCAxMTUuOTUgMjQuMTA5NEMxMTAuNDUzIDI0LjEwOTQgMTA1LjkwOCAxOS45NjU4IDEwNS45MDggMTIuNTAzOEMxMDUuOTA4IDUuMDQxODEgMTEwLjUyNiAwLjg5ODkzMiAxMTUuOTQ5IDAuODk4OTMyWiIgZmlsbD0iIzMyMUUzNyIvPgo8cGF0aCBkPSJNMzAuNzM5MSA1LjE4MzU4SDI1LjE0NTVWMjMuNjk0NkgyMS4xMDY1VjUuMTgzNThIMTUuNTQ0NVYxLjMxNTA2SDMwLjczOTFWNS4xODM1OFoiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni45NTEzIDIzLjY5NDZINDIuNTk2NEw0MS4zMDI5IDE5LjM3NzlIMzMuNzkyN0wzMi40OTkyIDIzLjY5NDZIMjguMjcwN0wzNS43NDg3IDEuMzE1MDZIMzkuNTM1OEw0Ni45NTEzIDIzLjY5NDZaTTM0LjYxMzggMTUuNTQxNUg0MC4zMjQ2TDM3LjUxNjYgNi43MTcwNkwzNC42MTM4IDE1LjU0MTVaIiBmaWxsPSIjMzIxRTM3Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTYuMzM5NiAxLjMxNDM2QzU2LjMzOTYgMS4zMTQzNiA2My43NTUyIDEuMjQxNyA2My43NTUyIDcuNTgxMzlDNjMuNzU1MiAxMC4zMTM0IDYyLjM3ODIgMTEuODk2NyA2MC44MTAzIDEyLjgxNDRINjAuODExQzYyLjU0MzEgMTMuNjg4OCA2My43NTU4IDE1LjY3NDcgNjMuNzU1OCAxNy43MDQxVjIzLjY5NDZINTkuNjg1MlYxOC4zNzg5QzU5LjY4NTIgMTYuNTAxMyA1OC4xOTM4IDE0Ljk4IDU2LjM0MDMgMTQuOTc2NEw1Mi41Njg3IDE0Ljk2NjRWMjMuNjkzOUg0OC41NjEzVjEuMzE0MzZINTYuMzM5NlpNNTIuNTY4NyAxMS4xMjkzSDU2LjM0MDNWMTEuMTNDNTYuMzQwMyAxMS4xMyA1OS42ODUyIDExLjEyOTkgNTkuNjg1MiA4LjE0MDczQzU5LjY4NTIgNS4xNTE1MyA1Ni4zNDAzIDUuMTUxNSA1Ni4zNDAzIDUuMTUxNUg1Mi41Njg3VjExLjEyOTNaIiBmaWxsPSIjMzIxRTM3Ii8+CjxwYXRoIGQ9Ik04NS43MDYyIDIzLjY5NDZIODEuNjY4VjEuMzE1MDZIODUuNzA2MlYyMy42OTQ2WiIgZmlsbD0iIzMyMUUzNyIvPgo8cGF0aCBkPSJNOTkuOTAyOCAxNS45ODk3VjEuMzE1MDZIMTAzLjY1OFYyMy42OTQ2SDEwMC4wNjFMOTIuMjE5MyA4LjMxNjc4TDkyLjIzOTYgMjMuNjk0Nkg4OC40NjNWMS4zMTUwNkg5Mi40MDczTDk5LjkwMjggMTUuOTg5N1oiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZD0iTTcwLjU0NiAxOS44MjYxSDc5LjI1NDNWMjMuNjkzOUg2Ni41MTRWMS4zMTUwNkg3MC41NDZWMTkuODI2MVoiIGZpbGw9IiMzMjFFMzciLz4KPC9zdmc+Cg==" />
+                <img alt="Starling Bank logo" width="126" height="25" decoding="async" data-nimg="1" class="kpueytf" style="color:transparent" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI2IiBoZWlnaHQ9IjI1IiB2aWV3Qm94PSIwIDAgMTI2IDI1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNy44NjM2MiAwLjgxODQyQzExLjI4MDggMC44MTg0MiAxNC40OTMxIDIuOTgxMDkgMTQuNDkzMSA3LjE1ODg2SDEwLjYzM0MxMC42MzMgNS4zMTQwMyA5LjI2MDk3IDQuMzUxMzMgNy45Mzk0MyA0LjM1MTMzQzYuNTAwOTMgNC4zNTEzMyA1LjI1MjU3IDUuMzEzNjUgNS4yNTIxMiA2LjYzMTU0SDUuMjUyODFDNS4yNTIxMSAxMS41Mzc1IDE2LjgwOTEgOC4wMzI0NiAxNi44MDkxIDE2LjYzOTVWMTYuNjQxNkMxNi44MDkxIDIxLjAyMjUgMTMuMjIgMjQuMTA5NCA4LjM3ODc1IDI0LjEwOTRDMy4xNjI3OCAyNC4xMDk0IC0wLjYwMzk1MyAyMC43MjA0IDAuMDgwMzE1NiAxNC44NDMySDQuMTA2NzFDMy42NTk2NiAxOC4wMzkgNS4wMTA3MSAyMC43MjA0IDguMzgzNjkgMjAuNzIwNEMxMS4wODc4IDIwLjcyMDQgMTIuNzAyMSAxOC45Mzc1IDEyLjcwMjEgMTYuNzk3N0MxMi43MDIxIDExLjI4ODIgMS4yODc1IDE1LjQ1MDkgMS4yODc0NyA2LjYzMzY5QzEuMjg3NDcgMy4zNjMwMiA0LjQ0NjQyIDAuODE4NDIzIDcuODYzNjIgMC44MTg0MloiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZD0iTTExNS45NDkgMC44OTg5MzJDMTIxLjM3MyAwLjg5ODk0NiAxMjQuNDQxIDQuMjA5NTMgMTI1LjQzMSA3LjgzNzE5SDEyMC44OUMxMjAuNDA2IDYuNjMwMTEgMTE5LjI1MiA0LjY4MTI0IDExNS45NDkgNC42ODEyNEMxMTIuNjQ2IDQuNjgxMjUgMTEwLjExMiA3LjM5NCAxMTAuMTEyIDEyLjUwMzhDMTEwLjExMiAxNy42MTM2IDExMi41OTIgMjAuMzI1NiAxMTUuOTQ5IDIwLjMyNTZDMTE5LjMwNiAyMC4zMjU2IDEyMS41OTEgMTguMzAwNSAxMjEuNzU0IDE0Ljk2NjRIMTE1LjUxN1YxMS4xMjg2SDEyNS44OTVDMTI2LjgyMiAyMC4wODQ4IDEyMS40NDggMjQuMTA5NCAxMTUuOTUgMjQuMTA5NEMxMTAuNDUzIDI0LjEwOTQgMTA1LjkwOCAxOS45NjU4IDEwNS45MDggMTIuNTAzOEMxMDUuOTA4IDUuMDQxODEgMTEwLjUyNiAwLjg5ODkzMiAxMTUuOTQ5IDAuODk4OTMyWiIgZmlsbD0iIzMyMUUzNyIvPgo8cGF0aCBkPSJNMzAuNzM5MSA1LjE4MzU4SDI1LjE0NTVWMjMuNjk0NkgyMS4xMDY1VjUuMTgzNThIMTUuNTQ0NVYxLjMxNTA2SDMwLjczOTFWNS4xODM1OFoiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni45NTEzIDIzLjY5NDZINDIuNTk2NEw0MS4zMDI5IDE5LjM3NzlIMzMuNzkyN0wzMi40OTkyIDIzLjY5NDZIMjguMjcwN0wzNS43NDg3IDEuMzE1MDZIMzkuNTM1OEw0Ni45NTEzIDIzLjY5NDZaTTM0LjYxMzggMTUuNTQxNUg0MC4zMjQ2TDM3LjUxNjYgNi43MTcwNkwzNC42MTM4IDE1LjU0MTVaIiBmaWxsPSIjMzIxRTM3Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTYuMzM5NiAxLjMxNDM2QzU2LjMzOTYgMS4zMTQzNiA2My43NTUyIDEuMjQxNyA2My43NTUyIDcuNTgxMzlDNjMuNzU1MiAxMC4zMTM0IDYyLjM3ODIgMTEuODk2NyA2MC44MTAzIDEyLjgxNDRINjAuODExQzYyLjU0MzEgMTMuNjg4OCA2My43NTU4IDE1LjY3NDcgNjMuNzU1OCAxNy43MDQxVjIzLjY5NDZINTkuNjg1MlYxOC4zNzg5QzU5LjY4NTIgMTYuNTAxMyA1OC4xOTM4IDE0Ljk4IDU2LjM0MDMgMTQuOTc2NEw1Mi41Njg3IDE0Ljk2NjRWMjMuNjkzOUg0OC41NjEzVjEuMzE0MzZINTYuMzM5NlpNNTIuNTY4NyAxMS4xMjkzSDU2LjM0MDNWMTEuMTNDNTYuMzQwMyAxMS4xMyA1OS42ODUyIDExLjEyOTkgNTkuNjg1MiA4LjE0MDczQzU5LjY4NTIgNS4xNTE1MyA1Ni4zNDAzIDUuMTUxNSA1Ni4zNDAzIDUuMTUxNUg1Mi41Njg3VjExLjEyOTNaIiBmaWxsPSIjMzIxRTM3Ii8+CjxwYXRoIGQ9Ik04NS43MDYyIDIzLjY5NDZIODEuNjY4VjEuMzE1MDZIODUuNzA2MlYyMy42OTQ2WiIgZmlsbD0iIzMyMUUzNyIvPgo8cGF0aCBkPSJNOTkuOTAyOCAxNS45ODk3VjEuMzE1MDZIMTAzLjY1OFYyMy42OTQ2SDEwMC4wNjFMOTIuMjE5MyA4LjMxNjc4TDkyLjIzOTYgMjMuNjk0Nkg4OC40NjNWMS4zMTUwNkg5Mi40MDczTDk5LjkwMjggMTUuOTg5N1oiIGZpbGw9IiMzMjFFMzciLz4KPHBhdGggZD0iTTcwLjU0NiAxOS44MjYxSDc5LjI1NDNWMjMuNjkzOUg2Ni41MTRWMS4zMTUwNkg3MC41NDZWMTkuODI2MVoiIGZpbGw9IiMzMjFFMzciLz4KPC9zdmc+Cg==" />
+</a>
+              </div>
+              <div class="kpueyt9">
+                <div style="position:relative">
+                  <ul data-orientation="horizontal" class="kpueytc kpueytd" dir="ltr">
+                    <li>
+                      <button id="radix-:R8m6:-trigger-pca" data-state="closed" aria-expanded="false" aria-controls="radix-:R8m6:-content-pca" class="kpueytj kpueytg kpueyth" data-testid="siteHeader-personal" data-radix-collection-item="">
+                        Personal
+                        <!-- -->
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNC41TDYgOS41TDExIDQuNSIgc3Ryb2tlPSIjQTNBOUJBIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Toggle the Personal menu" class="kpueytl" />
+                      </button>
+                    </li>
+                    <li>
+                      <button id="radix-:R8m6:-trigger-bca" data-state="closed" aria-expanded="false" aria-controls="radix-:R8m6:-content-bca" class="kpueytk kpueytg kpueyth" data-testid="siteHeader-business" data-radix-collection-item="">
+                        Business
+                        <!-- -->
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNC41TDYgOS41TDExIDQuNSIgc3Ryb2tlPSIjQTNBOUJBIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Toggle the Personal menu" class="kpueytl" />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="kpueyta kpueyt7">
+                <div style="position:relative">
+                  <ul data-orientation="horizontal" class="kpueytc kpueytb" dir="ltr">
+                    <li>
+                      <button id="radix-:R8m6:-trigger-about" data-state="closed" aria-expanded="false" aria-controls="radix-:R8m6:-content-about" class="kpueyti kpueytg kpueytr" data-radix-collection-item="">
+                        <span class="kpueyth">                        About
+                        <!-- -->
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNC41TDYgOS41TDExIDQuNSIgc3Ryb2tlPSIjQTNBOUJBIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Toggle the Personal menu" class="kpueytl" />
+</span>
+                      </button>
+                    </li>
+                    <li>
+                      <a class="kpueyti kpueytg kpueytr" href="/help/" data-radix-collection-item="">                      Help
+</a>
+                    </li>
+                    <li>
+                      <a class="kpueyti kpueytg kpueytr" href="https://app.starlingbank.com/" target="_blank" rel="noopener noreferrer" data-radix-collection-item="">                      Log in
+</a>
+                    </li>
+                    <li>
+                      <a class="_1izlnb40 _18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z2f zp6bqe1bw _1izlnb45 _1izlnb4a btn-download-app zp6bqejo" data-test="button" href="/apply/" id="download-nav-cta">                      Apply now
+</a>
+                    </li>
+                    <li class="kpueytp">
+                      <button id="radix-:R8m6:-trigger-pca" data-state="closed" aria-expanded="false" aria-controls="radix-:R8m6:-content-pca" class="kpueytq" data-radix-collection-item="">
+                        <img alt="Open menu" width="42" height="42" decoding="async" data-nimg="1" class="mobile-nav" style="color:transparent" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDIiIGhlaWdodD0iNDIiIHZpZXdCb3g9IjAgMCA0MiA0MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjEiIGN5PSIyMSIgcj0iMjAiIHN0cm9rZT0iIzE5Mjg1MiIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjEyIiB5PSIxNSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMTkyODUyIi8+CjxyZWN0IHg9IjEyIiB5PSIyMCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMTkyODUyIi8+CjxyZWN0IHg9IjEyIiB5PSIyMCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMTkyODUyIi8+CjxyZWN0IHg9IjEyIiB5PSIyNSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjMTkyODUyIi8+Cjwvc3ZnPgo=" />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </section>
+      <main class="_13erfo1 zp6bqe12s zp6bqe16o zp6bqeyw" id="main-content">
+        <div class="_11p4rzg0 _11p4rzg4">
+          <section class="_1v3gbvl0 ntvih30 zp6bqebk zp6bqefg">
+            <div class="zp6bqefw ntvih38" data-testid="subNavigation">
+              <div class="_1nj2ry60" data-test="grid">
+                <div class="zp6bqe34 zp6bqe3u">
+                  <nav>
+                    <div class="tt-mm _1v3gbvl2 zp6bqe13g zp6bqe13n zp6bqe17c zp6bqe17j">
+                      <div class="zp6bqe18 zp6bqe15 zp6bqe5k zp6bqe5h zp6bqec8">
+                        <div class="_1v3gbvl5">
+                          <button class="tt-mm _1v3gbvl6" data-testid="discoverMoreBtn" aria-label="Discover more">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" fill="none" stroke="currentColor" class="_1v3gbvl8">
+                              <path d="m1 3.5 7 7 7-7" stroke-width="2" stroke-linecap="round">
+                              </path>
+                            </svg>
+                            <span class="_1v3gbvlc _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216" data-test="text">                            Discover more
+</span>
+                          </button>
+                          <button class="_1v3gbvl9" data-testid="searchBtn">
+                            <svg width="44" height="43" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="_1v3gbvla" aria-label="Search blog">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M.142 17a17 17 0 0 0 28.293 12.707l13 13a1 1 0 0 0 1.414-1.414l-13-13A17 17 0 1 0 .142 17Zm6.393 10.607A15 15 0 1 1 27.748 6.393 15 15 0 0 1 6.535 27.607Z">
+                              </path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="zp6bqe18 zp6bqe5g zp6bqec8 _1v3gbvl4">
+                        <a class="_1er6se50 _18is6z28 _1er6se55" data-test="link" href="/blog/" aria-label="Blog main page">                        <svg viewBox="0 0 264 72" width="243" height="66" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Noteworthy logo">
+                          <path d="M44.404 59.614c-2.821 0-5.329-.667-7.526-1.998-2.194-1.334-3.92-3.175-5.172-5.525-1.256-2.39-1.88-5.115-1.88-8.172 0-3.057.607-5.782 1.823-8.172 1.255-2.39 2.978-4.251 5.172-5.585 2.233-1.334 4.78-1.998 7.644-1.998s5.31.667 7.465 1.997c2.194 1.335 3.899 3.193 5.115 5.586 1.217 2.394 1.823 5.115 1.823 8.172 0 3.057-.606 5.782-1.823 8.172-1.216 2.35-2.921 4.195-5.115 5.525-2.154 1.334-4.662 1.998-7.522 1.998h-.004Zm0-3.881c2.037 0 3.802-.471 5.29-1.413 1.487-.941 2.625-2.293 3.41-4.055.824-1.802 1.234-3.92 1.234-6.35 0-2.428-.41-4.544-1.234-6.349-.785-1.8-1.92-3.174-3.41-4.116-1.491-.98-3.253-1.47-5.29-1.47s-3.82.49-5.35 1.47c-1.488.981-2.647 2.372-3.467 4.173-.824 1.763-1.234 3.86-1.234 6.289s.41 4.487 1.234 6.288c.824 1.762 1.98 3.136 3.467 4.117 1.526.941 3.31 1.412 5.35 1.412v.004ZM71.144 59.086c-2.703 0-4.662-.646-5.878-1.94-1.177-1.335-1.762-3.154-1.762-5.469V32.865h-4.997v-3.763h4.997v-7.465h4.352v7.465h6.584v3.763h-6.584v18.577c0 1.412.331 2.39.998 2.939.668.55 1.745.824 3.232.824.667 0 1.452-.057 2.35-.175v3.645c-1.216.275-2.31.41-3.292.41ZM89.047 59.614c-2.94 0-5.508-.667-7.701-1.998-2.194-1.373-3.899-3.253-5.115-5.643-1.177-2.39-1.762-5.115-1.762-8.172 0-3.056.588-5.643 1.762-7.993 1.177-2.39 2.86-4.252 5.054-5.586 2.194-1.373 4.74-2.058 7.64-2.058 2.743 0 5.115.646 7.113 1.94 1.997 1.256 3.528 3.036 4.583 5.35 1.06 2.273 1.588 4.898 1.588 7.877 0 .51-.022.96-.057 1.351H78.874c.118 3.646 1.077 6.428 2.882 8.347 1.801 1.88 4.234 2.821 7.29 2.821 2.273 0 4.095-.528 5.469-1.587 1.412-1.099 2.625-2.625 3.645-4.587l3.585 1.352c-1.099 2.704-2.743 4.819-4.937 6.35-2.154 1.49-4.74 2.232-7.758 2.232l-.003.004Zm8.76-18.341c-.078-2.94-.942-5.233-2.586-6.878-1.605-1.644-3.702-2.468-6.288-2.468-2.822 0-5.094.842-6.82 2.53-1.723 1.643-2.765 3.92-3.114 6.819H97.81h-.004v-.004ZM110.716 58.671l-9.17-29.57h4.352l7.112 23.396 7.173-23.395h4.116l7.173 23.395 7.113-23.395h4.291l-9.171 29.57h-4.291l-7.23-23.278-7.112 23.277h-4.356ZM156.711 59.614c-2.821 0-5.329-.667-7.526-1.998-2.193-1.334-3.92-3.175-5.172-5.525-1.255-2.39-1.883-5.115-1.883-8.172 0-3.057.606-5.782 1.823-8.172 1.255-2.39 2.978-4.251 5.175-5.585 2.233-1.334 4.78-1.998 7.64-1.998 2.861 0 5.312.667 7.466 1.997 2.197 1.335 3.902 3.193 5.115 5.586 1.213 2.39 1.823 5.115 1.823 8.172 0 3.057-.607 5.782-1.823 8.172-1.213 2.35-2.918 4.195-5.115 5.525-2.154 1.334-4.662 1.998-7.523 1.998Zm0-3.881c2.037 0 3.803-.471 5.29-1.413 1.491-.941 2.625-2.293 3.41-4.055.824-1.802 1.234-3.92 1.234-6.35 0-2.428-.41-4.544-1.234-6.349-.785-1.8-1.919-3.174-3.41-4.116-1.487-.98-3.253-1.47-5.29-1.47-2.036 0-3.82.49-5.35 1.47-1.491.981-2.647 2.372-3.467 4.173-.824 1.763-1.234 3.86-1.234 6.289s.41 4.487 1.234 6.288c.824 1.762 1.976 3.136 3.467 4.117 1.527.941 3.31 1.412 5.35 1.412v.004ZM174.748 58.672v-29.57h4.352v5.35c.784-1.722 1.879-3.074 3.292-4.055 1.412-1.02 3.075-1.527 4.997-1.527.314 0 .589.018.824.057.236 0 .492.04.763.118v4.116a9.682 9.682 0 0 0-1.587-.118c-2.507 0-4.526.92-6.056 2.765-1.491 1.801-2.233 4.234-2.233 7.29v15.577h-4.352v-.003ZM202.896 59.086c-2.703 0-4.665-.646-5.878-1.94-1.173-1.335-1.762-3.154-1.762-5.469V32.865h-4.997v-3.763h4.997v-7.465h4.352v7.465h6.584v3.763h-6.584v18.577c0 1.412.335 2.39.998 2.939.664.55 1.745.824 3.232.824.667 0 1.452-.057 2.351-.175v3.645c-1.213.275-2.312.41-3.293.41ZM208.624 58.672V16.055h4.352v17.93c1.02-1.8 2.389-3.213 4.116-4.233 1.723-1.06 3.742-1.588 6.056-1.588 3.293 0 5.857 1.06 7.701 3.175 1.841 2.076 2.761 4.958 2.761 8.642v18.695h-4.351V40.627c0-2.86-.607-5.015-1.823-6.467-1.213-1.451-3.018-2.175-5.408-2.175-1.765 0-3.331.47-4.704 1.412-1.37.942-2.451 2.272-3.232 3.998-.745 1.684-1.116 3.664-1.116 5.94v15.34h-4.352v-.003ZM250.243 70.78c-2.939 0-5.468-.627-7.583-1.879-2.115-1.255-3.567-3.057-4.351-5.407l3.998-1.295c.628 1.527 1.627 2.704 2.996 3.528 1.413.863 3.096 1.294 5.058 1.294 1.762 0 3.271-.353 4.527-1.059 1.294-.667 2.272-1.684 2.939-3.057.706-1.334 1.056-3 1.056-4.997v-5.172c-1.021 1.84-2.39 3.27-4.117 4.29-1.683 1.021-3.663 1.531-5.939 1.531-3.253 0-5.799-1.038-7.64-3.114-1.801-2.115-2.704-4.997-2.704-8.642V29.105h4.352v17.046c0 2.822.589 4.958 1.762 6.407 1.177 1.412 2.961 2.115 5.35 2.115 1.727 0 3.253-.45 4.587-1.352 1.37-.942 2.43-2.254 3.175-3.938.785-1.723 1.177-3.724 1.177-5.996V29.102h4.466V57.79c0 2.665-.549 4.976-1.644 6.938-1.06 1.958-2.586 3.45-4.584 4.47-1.962 1.059-4.252 1.587-6.881 1.587v-.004Z" fill="#192852">
+                          </path>
+                          <path d="M13.335 16.287c.386 2.751 11.212 38.808 18.025 51.252 3.493 6.38 8.62 5.598 8.472-.311-.364-14.397 2-41.511 5.47-54.478 0 0 3.107 4.613 2.166-1.973-.572-4.006-6.088-6.732-6.544-1.215-3.59 43.382-6.261 55.688-6.261 55.688C24.117 51.245 18.59 18.375 15.418 3.477 14.092-2.777 5.35-.235 8.01 8.227 13.586 24.89 3.267 80.92 3.267 59.083c0-21.836 4.466-29.232 13.49-47.485C20.785.651 14.93 1.078 13.335 7.176 7.21 30.617 0 46.865 0 59.083c0 7.29 6.129 11.831 8.01 6.167 2.03-6.112 2.994-25.558 5.325-48.963Z" fill="#192852">
+                          </path>
+                        </svg>
+</a>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </section>
+          <h1 class="npw7wh0 _18is6z2p zp6bqe1bs _18is6z214 _18is6z216" data-test="text">
+            Noteworthy | Starling Blog - Homepage. Selected articles
+          </h1>
+          <section class="ntvih30 zp6bqebk zp6bqefg">
+            <div class="ntvih38">
+              <section class="ntvih30 zp6bqebk zp6bqefg">
+                <div class="zp6bqebk zp6bqecp zp6bqefg zp6bqegl zp6bqevw zp6bqezs ntvih38">
+                  <a href="/blog/trend-vetter-the-last-digit-widget/" class="onrno10">                  <div class="_371uud9 _371uud3 _1nj2ry60 _1nj2ry62 zp6bqe6s zp6bqe6x zp6bqe72" data-test="grid" style="align-items:center">
+                    <div class="zp6bqe1bg g6hf65d">
+                      <p class="zp6bqefw _18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                        Good with money
+                      </p>
+                      <div class="">
+                        <h2 class="onrno11 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2b zp6bqe1c0" data-test="text">
+                          Trend Vetter: Last Digit Widget.
+                        </h2>
+                      </div>
+                      <div class="zp6bqefw _11aymo50" data-test="content">
+                        A nice combo of high-tech and low-fi. The best bit? It encourages a daily, habitual money move.
+                      </div>
+                      <div class="">
+                        <span class="_18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z28 zp6bqe1c4" data-test="text">                        By
+                        <!-- -->
+                        Mike Rampton
+</span>
+                      </div>
+                    </div>
+                    <div class="zp6bqe0 zp6bqe2 g6hf65e">
+                      <div class="_1id7mbm0 _1id7mbm1 _1id7mbm5" data-test="image-container" style="aspect-ratio:1280 / 720">
+                        <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" style="color:transparent;object-fit:cover;position:relative" srcset="/images/1080x720/6eac76109c/nw-header-trend-vetter-1.jpg 1x, /images/1080x720/6eac76109c/nw-header-trend-vetter-1.jpg 2x" src="/images/1080x720/6eac76109c/nw-header-trend-vetter-1.jpg" />
+                      </div>
+                    </div>
+                  </div>
+</a>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section class="ntvih30 zp6bqebk zp6bqefg">
+            <div class="ntvih38">
+              <section class="ntvih30 zp6bqebk zp6bqefg">
+                <div class="zp6bqebk zp6bqecp zp6bqefg zp6bqegl zp6bqevw zp6bqezs ntvih38">
+                  <div class="_371uuda _1nj2ry60 _1nj2ry62 zp6bqe6s zp6bqe6x zp6bqe72" data-test="grid" style="align-items:center">
+                    <div class="_371uudb">
+                      <div class="j2629o0">
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/lets-talk-money/whats-your-money-language/">                          <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" class="_8hoshl2" style="color:transparent;object-fit:cover;position:relative" srcset="/images/1196x795/8618a3aac9/ltm-article-header.jpg 1x, /images/1196x795/8618a3aac9/ltm-article-header.jpg 2x" src="/images/1196x795/8618a3aac9/ltm-article-header.jpg" />
+                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Let’s talk money
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            What’s your Money Language?
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/last-digit-widget-psychologist-interview/">                          <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" class="_8hoshl2" style="color:transparent;object-fit:cover;position:relative" srcset="/images/1080x720/17bd506190/therapist-headshot.jpg 1x, /images/1080x720/17bd506190/therapist-headshot.jpg 2x" src="/images/1080x720/17bd506190/therapist-headshot.jpg" />
+                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Last Digit Widget
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            Stimulus. Routine. Reward.
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/great-lock-in/">                          <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" class="_8hoshl2" style="color:transparent;object-fit:cover;position:relative" srcset="/images/1080x720/cfd70dae93/great-lock-in-article-hero.jpg 1x, /images/1080x720/cfd70dae93/great-lock-in-article-hero.jpg 2x" src="/images/1080x720/cfd70dae93/great-lock-in-article-hero.jpg" />
+                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Trend Vetter
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            The Great Lock In
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/going-sober-challenge/">                          <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" class="_8hoshl2" style="color:transparent;object-fit:cover;position:relative" srcset="/images/2160x1440/e49df04270/sober-for-31-days-header.jpg 1x, /images/2160x1440/e49df04270/sober-for-31-days-header.jpg 2x" src="/images/2160x1440/e49df04270/sober-for-31-days-header.jpg" />
+                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Saving
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            The Benefits of Dry January
+                          </h3>
+</a>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section class="ntvih30 zp6bqebk zp6bqefg">
+            <div class="ntvih38">
+              <section class="ntvih30 zp6bqebk zp6bqefg">
+                <div class="zp6bqebk zp6bqecp zp6bqefg zp6bqegl zp6bqevw zp6bqezs ntvih38">
+                  <a href="/blog/lifestyle-creep-what-it-is-how-to-avoid-it/" class="onrno10">                  <div class="_371uud9 _371uud3 _1nj2ry60 _1nj2ry62 zp6bqe6s zp6bqe6x zp6bqe72" data-test="grid" style="align-items:center">
+                    <div class="zp6bqe1bg g6hf65d">
+                      <p class="zp6bqefw _18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                        Good with money
+                      </p>
+                      <div class="">
+                        <h2 class="onrno11 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2b zp6bqe1c0" data-test="text">
+                          What is ‘lifestyle creep’ and how can I avoid it?
+                        </h2>
+                      </div>
+                      <div class="zp6bqefw _11aymo50" data-test="content">
+                        A monthly meal-out becomes weekly. Why Brighton when you could opt for Ibiza? Daily takeaway coffees become ‘a must’. Are you a victim of ‘lifestyle creep’?
+                      </div>
+                      <div class="">
+                        <span class="_18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z28 zp6bqe1c4" data-test="text">                        By
+                        <!-- -->
+                        Vicky Reynal
+</span>
+                      </div>
+                    </div>
+                    <div class="zp6bqe0 zp6bqe2 g6hf65e">
+                      <div class="_1id7mbm0 _1id7mbm1 _1id7mbm5" data-test="image-container" style="aspect-ratio:1280 / 720">
+                        <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" style="color:transparent;object-fit:cover;position:relative" srcset="/images/2160x1440/d819e3516c/lc_header.jpg 1x, /images/2160x1440/d819e3516c/lc_header.jpg 2x" src="/images/2160x1440/d819e3516c/lc_header.jpg" />
+                      </div>
+                    </div>
+                  </div>
+</a>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section class="ntvih30 zp6bqebk zp6bqefg">
+            <div class="ntvih38">
+              <section class="ntvih30 zp6bqebk zp6bqefg">
+                <div class="zp6bqebk zp6bqecp zp6bqefg zp6bqegl zp6bqevw zp6bqezs ntvih38">
+                  <div class="_371uuda _1nj2ry60 _1nj2ry62 zp6bqe6s zp6bqe6x zp6bqe72" data-test="grid" style="align-items:center">
+                    <div class="_371uudb">
+                      <div class="j2629o0">
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/joint-spending-understanding-where-your-money-is-going/">                          <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" class="_8hoshl2" style="color:transparent;object-fit:cover;position:relative" srcset="/images/2160x1440/0651fd16c8/joint-spending-understanding-where-your-money-is-going-header.jpg 1x, /images/2160x1440/0651fd16c8/joint-spending-understanding-where-your-money-is-going-header.jpg 2x" src="/images/2160x1440/0651fd16c8/joint-spending-understanding-where-your-money-is-going-header.jpg" />
+                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Joined at the Chip
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            “I kid myself that I wear the financial trousers.”
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/managing-shared-spending-as-a-couple/">                          <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" class="_8hoshl2" style="color:transparent;object-fit:cover;position:relative" srcset="/images/2160x1440/14ed9fb8f0/managing-shared-spending-as-a-couple-header.jpg 1x, /images/2160x1440/14ed9fb8f0/managing-shared-spending-as-a-couple-header.jpg 2x" src="/images/2160x1440/14ed9fb8f0/managing-shared-spending-as-a-couple-header.jpg" />
+                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Joined at the Chip
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            “Starting a family could cost us £25,000.”
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/managing-joint-finances/">                          <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" class="_8hoshl2" style="color:transparent;object-fit:cover;position:relative" srcset="/images/2040x1440/2fe3796ee0/joined-at-the-chip-header-5.jpg 1x, /images/2040x1440/2fe3796ee0/joined-at-the-chip-header-5.jpg 2x" src="/images/2040x1440/2fe3796ee0/joined-at-the-chip-header-5.jpg" />
+                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Joined at the Chip
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            “Turns out, mums usually take the hit.”
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/couples-money-discussing-spending-with-your-partner/">                          <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" class="_8hoshl2" style="color:transparent;object-fit:cover;position:relative" srcset="/images/2160x1440/0cae1c8a75/couples-money-discussing-spending-with-your-partner-header.jpg 1x, /images/2160x1440/0cae1c8a75/couples-money-discussing-spending-with-your-partner-header.jpg 2x" src="/images/2160x1440/0cae1c8a75/couples-money-discussing-spending-with-your-partner-header.jpg" />
+                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Joined at the Chip
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            “We’ve never discussed salaries.”
+                          </h3>
+</a>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section class="ntvih30 zp6bqebk zp6bqefg">
+            <div class="ntvih38">
+              <section class="ntvih30 zp6bqebk zp6bqefg">
+                <div class="zp6bqebk zp6bqecp zp6bqefg zp6bqegl zp6bqevw zp6bqezs ntvih38">
+                  <a href="/blog/protecting-yourself-from-app-fraud/" class="onrno10">                  <div class="_371uud8 _371uud3 _1nj2ry60 _1nj2ry62 zp6bqe6s zp6bqe6x zp6bqe72" data-test="grid" style="align-items:center">
+                    <div class="zp6bqe1bg g6hf65d">
+                      <p class="zp6bqefw _18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                        Fighting fraud
+                      </p>
+                      <div class="">
+                        <h2 class="onrno11 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2b zp6bqe1c0" data-test="text">
+                          How to protect yourself from APP fraud
+                        </h2>
+                      </div>
+                      <div class="zp6bqefw _11aymo50" data-test="content">
+                        When a criminal tricks someone into willingly making a bank transfer to them, this is known as APP (Authorised Push Payment) fraud. Learn how to protect yourself.
+                      </div>
+                      <div class="">
+                        <span class="_18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z28 zp6bqe1c4" data-test="text">                        By
+                        <!-- -->
+                        Starling Financial Crime Specialist
+</span>
+                      </div>
+                    </div>
+                    <div class="zp6bqe0 zp6bqe2 g6hf65e">
+                      <div class="_1id7mbm0 _1id7mbm1 _1id7mbm5" data-test="image-container" style="aspect-ratio:1280 / 720">
+                        <img alt="" loading="lazy" width="1280" height="720" decoding="async" data-nimg="1" style="color:transparent;object-fit:cover;position:relative" srcset="/images/2160x1440/1c275d0622/app-fraud-article-header.jpg 1x, /images/2160x1440/1c275d0622/app-fraud-article-header.jpg 2x" src="/images/2160x1440/1c275d0622/app-fraud-article-header.jpg" />
+                      </div>
+                    </div>
+                  </div>
+</a>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section class="ntvih30 zp6bqebk zp6bqefg">
+            <div class="ntvih38">
+              <section class="ntvih30 zp6bqebk zp6bqefg">
+                <div class="zp6bqebk zp6bqecp zp6bqefg zp6bqegl zp6bqevw zp6bqezs ntvih38">
+                  <div class="_371uuda _1nj2ry60 _1nj2ry62 zp6bqe6s zp6bqe6x zp6bqe72" data-test="grid" style="align-items:center">
+                    <div class="_371uudb">
+                      <div class="j2629o0">
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/tips-to-keeping-your-pins-passwords-safe/">                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Fighting fraud
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            PINs and passwords: helping you stay safe
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/impersonation-scams-what-you-need-to-know/">                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Fighting fraud
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            Six tips to combat impersonation scams
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/fight-fraud-call-159-if-you-suspect-a-scam/">                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Fighting fraud
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            Suspect a scam? Call 159 - the fraud hotline
+                          </h3>
+</a>
+                        </article>
+                        <article class="_8hoshl1">
+                          <a class="_1er6se50 _18is6z28 _1er6se55 _8hoshl0" data-test="link" href="/blog/how-to-stay-safe-from-identity-theft/">                          <p class="_18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                            Fighting fraud
+                          </p>
+                          <h3 class="_8hoshl3 _18is6z2p zp6bqe1c4 _18is6z214 _18is6z216 _18is6z2a" data-test="text">
+                            Anyone’s identity can be stolen these days
+                          </h3>
+</a>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section class="ntvih30 zp6bqed0 zp6bqedx zp6bqeea zp6bqeer zp6bqegw zp6bqeht zp6bqei6 zp6bqein">
+            <div class="zp6bqe1vc ntvih38 ntvih37">
+              <div class="zp6bqewg zp6bqew9 zp6bqewi zp6bqexf zp6bqe10c zp6bqe105 zp6bqe10e zp6bqe11b zp6bqe1bk g6hf659 _1nj2ry60 _1nj2ry62 zp6bqe6s zp6bqe6x zp6bqe72" data-test="grid" style="align-items:center">
+                <div class="zp6bqe1bk g6hf65d">
+                  <div class="_1tk035b0">
+                    <h2 class="_1fhi6pk0 _18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z2b zp6bqe1c0" data-test="text">
+                      Apply for a bank account
+                      <span class="">                      in minutes
+</span>
+                      from your phone.
+                    </h2>
+                    <p class="_1pg9ykh0 _1pg9ykh2 _18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z28" data-test="text">
+                      Award-winning everyday accounts with no monthly fees, industry-leading security features and a Mastercard™ bank card.
+                    </p>
+                    <a class="_1izlnb40 _18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z2f zp6bqe1bw _1izlnb45 _1izlnb4a btn-download-app" data-test="button" href="/apply/">                    Apply now
+</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="Footer_mainFooter__I7aDg">
+        <section class="Footer_siteMap__4v_pl">
+          <div class="Footer_footerLogo__DBFeI">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM5MiIgaGVpZ2h0PSIyNTQiIHZpZXdCb3g9IjAgMCAxMzkyIDI1NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTg2Ljg3NDMgMEMxMjQuNjI2IDAgMTYwLjExNCAyMy41NDQzIDE2MC4xMTQgNjkuMDI2NUgxMTcuNDdDMTE3LjQ3IDQ4Ljk0MjQgMTAyLjMxMiAzOC40NjE3IDg3LjcxMTggMzguNDYxN0M3MS44MTk5IDM4LjQ2MTcgNTguMDI4NCA0OC45MzgyIDU4LjAyMzQgNjMuMjg1Nkg1OC4wMzFDNTguMDIzMyAxMTYuNjk2IDE4NS43MDEgNzguNTM3IDE4NS43MDEgMTcyLjI0VjE3Mi4yNjJDMTg1LjcwMSAyMTkuOTU1IDE0Ni4wNDkgMjUzLjU2MiA5Mi41NjUzIDI1My41NjJDMzQuOTQxMiAyNTMuNTYxIC02LjY3MjI0IDIxNi42NjcgMC44ODcyOTYgMTUyLjY4M0g0NS4zNjk0QzQwLjQzMDUgMTg3LjQ3NSA1NS4zNTY0IDIxNi42NjYgOTIuNjE5OCAyMTYuNjY2QzEyMi40OTQgMjE2LjY2NiAxNDAuMzI4IDE5Ny4yNTcgMTQwLjMyOCAxNzMuOTYyQzE0MC4zMjggMTEzLjk4MSAxNC4yMjM4IDE1OS4zIDE0LjIyMzUgNjMuMzA5MUMxNC4yMjM1IDI3LjcwMjMgNDkuMTIyNCAyLjU1MjY3ZS0wNSA4Ni44NzQzIDBaIiBmaWxsPSIjNTBGRkVCIi8+CjxwYXRoIGQ9Ik0xMjgwLjk3IDAuODc2NTA1QzEzNDAuODggMC44NzY2NTcgMTM3NC43OCAzNi45MTggMTM4NS43MiA3Ni40MTEySDEzMzUuNTRDMTMzMC4yIDYzLjI3MDEgMTMxNy40NSA0Mi4wNTMzIDEyODAuOTYgNDIuMDUzM0MxMjQ0LjQ3IDQyLjA1MzQgMTIxNi40OCA3MS41ODY0IDEyMTYuNDggMTI3LjIxNUMxMjE2LjQ4IDE4Mi44NDQgMTI0My44NyAyMTIuMzY5IDEyODAuOTYgMjEyLjM2OUMxMzE4LjA0IDIxMi4zNjkgMTM0My4zIDE5MC4zMjIgMTM0NS4wOSAxNTQuMDI1SDEyNzYuMTlWMTEyLjI0M0gxMzkwLjg0QzE0MDEuMDggMjA5Ljc0NyAxMzQxLjcxIDI1My41NjEgMTI4MC45NyAyNTMuNTYyQzEyMjAuMjQgMjUzLjU2MiAxMTcwLjA0IDIwOC40NTIgMTE3MC4wNCAxMjcuMjE1QzExNzAuMDQgNDUuOTc4OCAxMjIxLjA1IDAuODc2NTA1IDEyODAuOTcgMC44NzY1MDVaIiBmaWxsPSIjNTBGRkVCIi8+CjxwYXRoIGQ9Ik0zMzkuNTkzIDQ3LjUyMjJIMjc3Ljc5OFYyNDkuMDQ2SDIzMy4xNzZWNDcuNTIyMkgxNzEuNzI5VjUuNDA2NzZIMzM5LjU5M1Y0Ny41MjIyWiIgZmlsbD0iIzUwRkZFQiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUxOC43IDI0OS4wNDZINDcwLjU4OUw0NTYuMjk5IDIwMi4wNTFIMzczLjMyOUwzNTkuMDM5IDI0OS4wNDZIMzEyLjMyNEwzOTQuOTM4IDUuNDA2NzZINDM2Ljc3Nkw1MTguNyAyNDkuMDQ2Wk0zODIuNDAxIDE2MC4yODVINDQ1LjQ5MUw0MTQuNDY5IDY0LjIxNjdMMzgyLjQwMSAxNjAuMjg1WiIgZmlsbD0iIzUwRkZFQiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYyMi40MTkgNS4zOTkxOEM2MjIuNDE5IDUuMzk5MTggNzA0LjM0MyA0LjYwODA3IDcwNC4zNDMgNzMuNjI2NEM3MDQuMzQzIDEwMy4zNjggNjg5LjEzIDEyMC42MDUgNjcxLjgwOSAxMzAuNTk3SDY3MS44MTdDNjkwLjk1MiAxNDAuMTE1IDcwNC4zNSAxNjEuNzM2IDcwNC4zNSAxODMuODI5VjI0OS4wNDZINjU5LjM4VjE5MS4xNzZDNjU5LjM4IDE3MC43MzUgNjQyLjkwMyAxNTQuMTczIDYyMi40MjYgMTU0LjEzNEw1ODAuNzU5IDE1NC4wMjVWMjQ5LjAzOUg1MzYuNDg2VjUuMzk5MThINjIyLjQxOVpNNTgwLjc1OSAxMTIuMjUxSDYyMi40MjZWMTEyLjI1OUM2MjIuNDI2IDExMi4yNTkgNjU5LjM4IDExMi4yNTggNjU5LjM4IDc5LjcxNThDNjU5LjM4IDQ3LjE3MzMgNjIyLjQyNiA0Ny4xNzI5IDYyMi40MjYgNDcuMTcyOUg1ODAuNzU5VjExMi4yNTFaIiBmaWxsPSIjNTBGRkVCIi8+CjxwYXRoIGQ9Ik05NDYuODUgMjQ5LjA0Nkg5MDIuMjM3VjUuNDA2NzZIOTQ2Ljg1VjI0OS4wNDZaIiBmaWxsPSIjNTBGRkVCIi8+CjxwYXRoIGQ9Ik0xMTAzLjY5IDE2NS4xNjVWNS40MDY3NkgxMTQ1LjE4VjI0OS4wNDZIMTEwNS40M0wxMDE4LjggODEuNjMyNEwxMDE5LjAzIDI0OS4wNDZIOTc3LjMwNlY1LjQwNjc2SDEwMjAuODhMMTEwMy42OSAxNjUuMTY1WiIgZmlsbD0iIzUwRkZFQiIvPgo8cGF0aCBkPSJNNzc5LjM2NiAyMDYuOTMxSDg3NS41NzJWMjQ5LjAzOUg3MzQuODIyVjUuNDA2NzZINzc5LjM2NlYyMDYuOTMxWiIgZmlsbD0iIzUwRkZFQiIvPgo8L3N2Zz4K" width="100%" height="100%" alt="" />
+          </div>
+          <div class="Footer_mainFooterSection__XGgKO">
+            <div class="Footer_heading__1VIy4">
+              Company
+            </div>
+            <ul>
+              <li class="Footer_link__yAkM_">
+                <a href="/about/">                About Starling
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/investors/">                Annual Report &amp; Pillar 3
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/careers/">                Careers
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/about/partnerships/charity-partnerships/">                Charity Partnerships
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/about/ethics-statement/">                Ethics statement
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/about/gender-equality/">                Gender equality
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/docs/reports-research/Starling-IfNotNowWhen.pdf">                If Not Now, When? Initiative
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/about/starling-bank-internal-audit-charter/">                Internal Audit Charter
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/media/">                Newsroom
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/refer-a-friend/">                Refer a friend scheme
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/about/our-tax-strategy/">                Tax strategy
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/blog/women-in-finance-charter-update/">                Women in Finance Charter
+</a>
+              </li>
+            </ul>
+          </div>
+          <div class="Footer_mainFooterSection__XGgKO">
+            <div class="Footer_heading__1VIy4">
+              Legal
+            </div>
+            <ul>
+              <li class="Footer_link__yAkM_">
+                <a href="/legal/">                All legal documents
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/legal/account/fscs-protection/">                FSCS Protection
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/legal/privacy-notice/">                Privacy Notice
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/legal/modern-slavery-statement/">                Modern Slavery Statement
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/about/carbon-reduction-plan/">                Carbon Reduction Plan
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <button>
+                  Manage cookies
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="Footer_mainFooterSection__XGgKO">
+            <div class="Footer_heading__1VIy4">
+              Customer support
+            </div>
+            <ul>
+              <li class="Footer_link__yAkM_">
+                <a href="/resources/tools/cost-of-living/">                Cost of living
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/mobile-banking-security/fraud/">                APP Scams Code
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/resources/banking/banking-terms-and-definitions/">                Banking glossary
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/help/">                Customer support hub
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/legal/">                Fees, rates and charges
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="https://help.starlingbank.com/" target="_blank" rel="noopener noreferrer">                Help centre
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/contact/">                How to contact us
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/security/disclosure/">                Responsible Disclosure
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/mobile-banking-security/">                Security and fraud
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="https://starlingbank.statuspage.io/" target="_blank" rel="noopener noreferrer">                Service status
+                <div class="Footer_status__rZDsn">
+                  <img alt="All systems operational." width="10" height="10" decoding="async" data-nimg="1" style="color:transparent" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjUiIGZpbGw9IiMyRUNDNzEiLz4KPC9zdmc+Cg==" />
+                </div>
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/website-accessibility/">                Website accessibility
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/about/starling-bank-social-media-community-guidelines/">                Social media community guidelines
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/faq/customer-support/money-worries/">                Money worries
+</a>
+              </li>
+            </ul>
+          </div>
+          <div class="Footer_mainFooterSection__XGgKO">
+            <div class="Footer_heading__1VIy4">
+              Partner with us
+            </div>
+            <ul>
+              <li class="Footer_link__yAkM_">
+                <a href="/referral/accountant/">                Accountant referral programme
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="/banking-services/">                B2B Banking Services
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="https://developer.starlingbank.com/" target="_blank" rel="noopener noreferrer">                Developers
+</a>
+              </li>
+              <li class="Footer_link__yAkM_">
+                <a href="https://www.enginebystarling.com/" target="_blank" rel="noopener noreferrer">                Engine by Starling
+</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="Footer_actions__Cukzr">
+          <div class="Footer_split__3EkB1">
+            <div class="Footer_socialHeading__ntVAP">
+              Connect with us
+            </div>
+            <ul class="Footer_linksList__ymS5r">
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://www.facebook.com/StarlingBankUK" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on Facebook">                <svg viewBox="0 0 42 42" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <path d="M16.688 6.375a5.063 5.063 0 0 0-5.063 5.063v3.937H8.812a.563.563 0 0 0-.562.563v4.5a.563.563 0 0 0 .563.562h2.812v9.563a.563.563 0 0 0 .563.562h4.5a.563.563 0 0 0 .562-.563V21h2.813a.562.562 0 0 0 .545-.426l1.125-4.5a.565.565 0 0 0-.299-.642.562.562 0 0 0-.247-.057H17.25v-1.688A1.687 1.687 0 0 1 18.938 12h2.25a.563.563 0 0 0 .562-.563v-4.5a.563.563 0 0 0-.563-.562h-4.5Z">
+                  </path>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://twitter.com/starlingbank" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on Twitter">                <svg viewBox="0 0 42 42" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <path d="M20.732 16.656 29.47 6.5H27.4l-7.586 8.818-6.06-8.818H6.766l9.163 13.335-9.163 10.65h2.07l8.012-9.313 6.399 9.313h6.988l-9.502-13.83Zm-2.835 3.296-.929-1.328L9.582 8.06h3.18l5.96 8.527.93 1.327L27.4 28.997h-3.18l-6.323-9.044Z">
+                  </path>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://www.threads.net/@StarlingBank" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on Threads">                <svg viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.157 9.64C12.272 7.17 15.2 6 18.374 6c3.03 0 5.708.726 7.774 2.208 2.09 1.499 3.454 3.698 3.94 6.426a1.408 1.408 0 0 1-2.194 1.416 1.406 1.406 0 0 1-.574-.923c-.366-2.05-1.353-3.589-2.81-4.633-1.478-1.06-3.539-1.681-6.136-1.681-2.453 0-4.563.884-6.082 2.656-1.536 1.793-2.59 4.644-2.59 8.786 0 3.996 1.351 6.408 3.083 7.849 1.777 1.48 4.135 2.084 6.345 2.084 4.362 0 7.037-2.568 7.161-5.376.062-1.394-.52-2.52-1.6-3.344a4.937 4.937 0 0 0-.078-.06c-.217.988-.576 1.867-1.071 2.619-1.035 1.572-2.61 2.49-4.415 2.622-1.665.124-3.062-.276-4.083-1.098a4.317 4.317 0 0 1-1.614-3.117c-.054-.926.102-2.293 1.157-3.423 1.06-1.137 2.77-1.756 5.214-1.756.721 0 1.427.052 2.106.16-.24-1.18-.78-1.755-1.247-2.065-.634-.422-1.362-.503-1.716-.503-.994 0-1.875.373-2.703 1.323a1.407 1.407 0 0 1-2.121-1.847c1.318-1.513 2.952-2.288 4.824-2.288.656 0 2.004.129 3.273.971 1.342.893 2.41 2.462 2.598 4.96l.02.326a8.516 8.516 0 0 1 1.563.94c1.754 1.339 2.808 3.32 2.702 5.705C28.89 29.69 24.513 33 19.13 33c-2.663 0-5.724-.72-8.145-2.734-2.467-2.054-4.095-5.31-4.095-10.01 0-4.597 1.17-8.171 3.267-10.617Zm11.8 10.643c-.708-.147-1.431-.22-2.156-.216-2.014 0-2.828.51-3.158.863-.334.358-.434.836-.405 1.339.023.398.205.797.57 1.09.36.292 1.012.567 2.112.486.923-.068 1.71-.512 2.273-1.365.35-.533.632-1.26.765-2.197Z">
+                  </path>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://www.instagram.com/starlingbank/" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on Instagram">                <svg viewBox="0 0 42 42" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <g clip-path="url(#instagram_svg__clip0_95_1708)" transform="matrix(1.5 0 0 1.5 -12 -12)">
+                    <path d="M21 13.622c2.403 0 2.688.01 3.637.053 2.44.11 3.579 1.268 3.69 3.689.043.949.051 1.234.051 3.637s-.009 2.688-.051 3.636c-.112 2.42-1.248 3.579-3.69 3.69-.949.043-1.233.052-3.637.052-2.403 0-2.688-.009-3.637-.052-2.445-.112-3.578-1.275-3.689-3.69-.043-.949-.053-1.233-.053-3.637 0-2.403.01-2.687.053-3.637.112-2.42 1.248-3.578 3.69-3.689.949-.043 1.233-.052 3.636-.052ZM21 12c-2.444 0-2.75.01-3.71.054-3.269.15-5.085 1.963-5.235 5.235C12.01 18.249 12 18.556 12 21s.01 2.751.054 3.711c.15 3.269 1.963 5.085 5.235 5.235.96.043 1.267.054 3.711.054s2.751-.01 3.711-.054c3.266-.15 5.087-1.963 5.234-5.235.044-.96.055-1.267.055-3.711s-.01-2.75-.054-3.71c-.147-3.266-1.963-5.085-5.234-5.235C23.75 12.01 23.444 12 21 12Zm0 4.378a4.622 4.622 0 1 0 0 9.244 4.622 4.622 0 0 0 0-9.244ZM21 24a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm4.805-8.884a1.08 1.08 0 1 0-.001 2.161 1.08 1.08 0 0 0 0-2.16Z">
+                    </path>
+                  </g>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://www.linkedin.com/company/starlingbank" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on Linkedin">                <svg viewBox="0 0 42 42" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <g clip-path="url(#linkedin_svg__clip0_95_1711)" transform="matrix(1.5 0 0 1.5 -12.75 -12.75)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.625 16.5a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75ZM16.5 29.25V18h-3.75v11.25h3.75ZM18 18h3.375v1.46c.537-.706 1.684-1.46 3.75-1.46 3.247 0 4.125 3.24 4.125 5.25v6H25.5v-6c0-.75-.375-2.25-1.875-2.25-1.065 0-1.815.756-2.25 1.463v6.787H18V18Z">
+                    </path>
+                  </g>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://flipboard.com/@starlingbank/starling-bank-blog-rponqiocz" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on Flipboard">                <svg viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <path d="M6.5 6.5v28.6h28.6V6.5H6.5Zm22.88 11.44h-5.72v5.72h-5.72v5.72h-5.72V12.22h17.16v5.72Z" fill="#FFF" fill-rule="nonzero">
+                  </path>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://www.youtube.com/c/StarlingBankApp" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on Youtube">                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" fill="none" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <path d="M37.39 15.85s-.305-2.15-1.244-3.095c-1.188-1.243-2.517-1.249-3.126-1.322-4.363-.317-10.914-.317-10.914-.317h-.012s-6.55 0-10.914.317c-.61.073-1.938.08-3.126 1.322-.939.945-1.237 3.096-1.237 3.096S6.5 18.38 6.5 20.903v2.364c0 2.523.31 5.052.31 5.052s.305 2.15 1.238 3.095c1.188 1.243 2.748 1.2 3.443 1.335 2.498.237 10.609.31 10.609.31s6.557-.012 10.92-.322c.61-.073 1.938-.08 3.126-1.323.939-.944 1.243-3.095 1.243-3.095s.311-2.523.311-5.052v-2.364c0-2.523-.31-5.052-.31-5.052ZM18.875 26.138v-8.769l8.428 4.4-8.428 4.37Z" fill="#fff">
+                  </path>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://www.tiktok.com/@starlingbank" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on TikTok">                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" fill="none" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <g clip-path="url(#tiktok_svg__a)" transform="matrix(1.3 0 0 1.3 3.9 3.9)">
+                    <path d="M17.073-.007h-4.045v16.348c0 1.948-1.556 3.548-3.492 3.548s-3.491-1.6-3.491-3.548c0-1.913 1.52-3.478 3.388-3.548V8.69C5.319 8.759 2 12.132 2 16.34c0 4.243 3.388 7.652 7.57 7.652 4.184 0 7.572-3.443 7.572-7.652V7.958a9.366 9.366 0 0 0 5.358 1.81V5.662c-3.042-.105-5.427-2.609-5.427-5.67Z" fill="#fff">
+                    </path>
+                  </g>
+                  <defs>
+                    <clipPath id="tiktok_svg__a">
+                      <path fill="#fff" transform="translate(0 -.007)" d="M0 0h24v24H0z">
+                      </path>
+                    </clipPath>
+                  </defs>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="https://www.pinterest.co.uk/StarlingBank/" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank on Pinterest">                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" fill="none" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <g clip-path="url(#pinterest_svg__a)" transform="matrix(1.3 0 0 1.3 3.9 3.9)">
+                    <path d="M12-.007c-6.628 0-12 5.372-12 12 0 5.086 3.164 9.427 7.627 11.175-.104-.951-.202-2.404.042-3.44.22-.938 1.406-5.963 1.406-5.963s-.36-.717-.36-1.781c0-1.669.965-2.916 2.17-2.916 1.021 0 1.518.769 1.518 1.692 0 1.032-.656 2.57-.994 3.994-.28 1.195.6 2.17 1.777 2.17 2.133 0 3.773-2.25 3.773-5.493 0-2.874-2.062-4.885-5.01-4.885-3.413 0-5.42 2.56-5.42 5.208 0 1.031.4 2.138.896 2.738a.359.359 0 0 1 .084.342c-.089.38-.295 1.195-.332 1.36-.052.22-.174.266-.404.159-1.5-.699-2.437-2.888-2.437-4.65 0-3.788 2.752-7.261 7.926-7.261 4.163 0 7.397 2.967 7.397 6.932 0 4.135-2.606 7.463-6.225 7.463-1.214 0-2.357-.633-2.751-1.378 0 0-.6 2.292-.745 2.855-.272 1.04-1.004 2.348-1.491 3.145 1.125.347 2.316.534 3.553.534 6.628 0 12-5.372 12-12s-5.372-12-12-12Z" fill="#fff">
+                    </path>
+                  </g>
+                  <defs>
+                    <clipPath id="pinterest_svg__a">
+                      <path fill="#fff" transform="translate(0 -.007)" d="M0 0h24v24H0z">
+                      </path>
+                    </clipPath>
+                  </defs>
+                </svg>
+</a>
+              </li>
+              <li class="Footer_socialLink__uGOsd">
+                <a href="/rss.xml" target="_blank" rel="noopener noreferrer" aria-label="Link to Starling Bank blog RSS feed">                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" fill="none" class="zp6bqe1kk zp6bqe1do zp6bqe1go vizujf0">
+                  <g transform="matrix(1.3 0 0 1.3 -10.4 -7.8)" fill="#fff">
+                    <circle cx="15" cy="27" r="2">
+                    </circle>
+                    <path d="M12 12v3c8.284 0 15 6.716 15 15h3c0-9.941-8.059-18-18-18z">
+                    </path>
+                    <path d="M12 18v3a9 9 0 0 1 9 9h3c0-6.627-5.373-12-12-12z">
+                    </path>
+                  </g>
+                </svg>
+</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="Footer_footnote__tIlMp">
+          <a href="/docs/legal/fscs-online-leaflet.pdf" target="_blank" style="width:100%;max-width:86px;height:55px" rel="noreferrer">          <img alt="fscs protection leaflet pdf" loading="lazy" width="128" height="76" decoding="async" data-nimg="1" style="color:transparent;width:100%;height:auto" sizes="100vw" srcset="/processed-images/fscsWhite-512.png 768w, /processed-images/fscsWhite-512.png 1020w, /processed-images/fscsWhite-1024.png 1441w, /processed-images/fscsWhite-2048.png 2048w, /processed-images/fscsWhite-2048.png 3840w" src="/processed-images/fscsWhite-2048.png" />
+</a>
+          <div class="Footer_text__8dQX9">
+            <p class="Footer_legalCopy__yW7__">
+              Starling Bank Limited (trading as Starling) is registered in England and Wales (No. 09092149), 5th Floor London Fruit And Wool Exchange, 1 Duval Square, London, United Kingdom, E1 6PW. We are authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority under registration number 730166.
+            </p>
+            <p class="Footer_copyrightNotice__O96wX">
+              © Starling Bank 2026. All rights reserved.
+            </p>
+          </div>
+        </section>
+      </footer>
+      <a class="_1izlnb40 _18is6z2p zp6bqe1bs _18is6z214 _18is6z216 _18is6z2f zp6bqe1bw _1izlnb41 _1izlnb4a _1shgxu20" data-test="button" id="help-button" href="/help/" aria-label="Go to the help page">      <svg class="_1shgxu21" viewBox="0 0 8 13" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.892 8.8v-.24c0-.267.053-.499.16-.696.107-.197.24-.365.4-.504.16-.139.39-.315.688-.528.384-.277.699-.53.944-.76.245-.23.456-.53.632-.904.176-.373.264-.821.264-1.344 0-.533-.13-1.053-.392-1.56-.261-.507-.68-.93-1.256-1.272C5.756.651 5.02.48 4.124.48c-.79 0-1.47.133-2.04.4-.57.267-1.021.63-1.352 1.088-.33.459-.56.981-.688 1.568l1.824.48c.128-.533.36-.965.696-1.296.336-.33.835-.496 1.496-.496.427 0 .787.075 1.08.224.293.15.512.352.656.608a1.7 1.7 0 01.216.848c0 .299-.056.55-.168.752-.112.203-.25.376-.416.52a6.179 6.179 0 01-.696.504 8.093 8.093 0 00-.912.68c-.235.208-.435.49-.6.848-.165.357-.248.808-.248 1.352v.24h1.92zm-.928 3.328c.32 0 .595-.115.824-.344.23-.23.344-.52.344-.872 0-.31-.115-.579-.344-.808a1.124 1.124 0 00-.824-.344c-.341 0-.63.115-.864.344-.235.23-.352.499-.352.808a1.189 1.189 0 001.216 1.216z" fill="currentColor" fill-rule="nonzero">
+        </path>
+      </svg>
+      <span class="_1shgxu22">      Help
+</span>
+</a>
+    </div>
+    <script id="__NEXT_DATA__" type="application/json">
+      {&#34;props&#34;:{&#34;pageProps&#34;:{&#34;story&#34;:{&#34;name&#34;:&#34;index&#34;,&#34;created_at&#34;:&#34;2024-08-09T14:27:41.007Z&#34;,&#34;published_at&#34;:&#34;2025-12-11T11:09:09.725Z&#34;,&#34;updated_at&#34;:&#34;2026-01-07T14:11:08.682Z&#34;,&#34;id&#34;:534169924,&#34;uuid&#34;:&#34;a27d3043-ac8c-4449-a403-ba6cec8dcb6b&#34;,&#34;content&#34;:{&#34;_uid&#34;:&#34;7b4d6346-b915-4dc8-a362-ff4cfd96dbdd&#34;,&#34;content&#34;:[{&#34;_uid&#34;:&#34;07eb18bd-e3ee-40a3-82b2-886e89f4d2f3&#34;,&#34;article&#34;:&#34;09c1e906-f916-443e-b6b8-219907050205&#34;,&#34;reversed&#34;:true,&#34;_editable&#34;:null,&#34;component&#34;:&#34;large_preview_card&#34;,&#34;lazy_load&#34;:false},{&#34;_uid&#34;:&#34;79802660-7193-4ab6-a8b1-acf962b976c6&#34;,&#34;curated&#34;:true,&#34;articles&#34;:[&#34;18208c45-b745-4bd3-b580-47eacbed1aa1&#34;,&#34;b19251d4-82fe-40fa-a518-c16653b33cc2&#34;,&#34;19eee3f4-19ee-4f35-af90-3f16863e27cc&#34;,&#34;a74ad4c1-a6d4-461b-bf56-e9c9a744f4e1&#34;],&#34;_editable&#34;:null,&#34;component&#34;:&#34;preview_cards&#34;,&#34;showImage&#34;:true,&#34;categories&#34;:[],&#34;showAuthor&#34;:false,&#34;showCategory&#34;:true,&#34;showDescription&#34;:false},{&#34;_uid&#34;:&#34;2021c514-62be-4fe5-9bb3-6d14b8018762&#34;,&#34;article&#34;:&#34;1b19d042-460d-48fe-b26a-90a2e774bac0&#34;,&#34;reversed&#34;:true,&#34;_editable&#34;:null,&#34;component&#34;:&#34;large_preview_card&#34;,&#34;lazy_load&#34;:false},{&#34;_uid&#34;:&#34;66a9b562-936d-4dce-acc7-1454a3a70acd&#34;,&#34;curated&#34;:true,&#34;articles&#34;:[&#34;85d35156-bd41-4e5a-8350-3db1cda37323&#34;,&#34;be763924-e2d8-4067-b760-71ee23726ec7&#34;,&#34;cefed913-3657-46ce-b2b4-71199ab8c818&#34;,&#34;967d64ff-b3b7-4923-a9f7-c7ee9b1db5d6&#34;],&#34;_editable&#34;:null,&#34;component&#34;:&#34;preview_cards&#34;,&#34;showImage&#34;:true,&#34;categories&#34;:[],&#34;showAuthor&#34;:false,&#34;showCategory&#34;:true,&#34;showDescription&#34;:false},{&#34;_uid&#34;:&#34;2eb75e79-9acf-41e1-b8ce-d583d9f3a822&#34;,&#34;article&#34;:&#34;8b72969f-c565-4393-9a94-4d6b1fe28f4a&#34;,&#34;reversed&#34;:false,&#34;_editable&#34;:null,&#34;component&#34;:&#34;large_preview_card&#34;,&#34;lazy_load&#34;:false},{&#34;_uid&#34;:&#34;e23bff0a-d040-4efa-9420-0ec635cb1676&#34;,&#34;curated&#34;:true,&#34;articles&#34;:[&#34;3d9fd934-15ab-455f-9fc1-1e3890bd53ca&#34;,&#34;ff4d400d-2db7-42ef-8661-6874e4e54285&#34;,&#34;ba793773-99f5-4f61-9676-69d9d0be68db&#34;,&#34;f943e380-c759-4265-add2-1da628a3cc85&#34;],&#34;_editable&#34;:null,&#34;component&#34;:&#34;preview_cards&#34;,&#34;showImage&#34;:false,&#34;categories&#34;:[],&#34;showAuthor&#34;:false,&#34;showCategory&#34;:true,&#34;showDescription&#34;:false},{&#34;_uid&#34;:&#34;63600131-d920-4fc6-8d1a-59143f129265&#34;,&#34;content&#34;:[{&#34;_uid&#34;:&#34;d8f056b6-ae1b-47d5-b3e5-9e21ba2858a3&#34;,&#34;content&#34;:{&#34;type&#34;:&#34;doc&#34;,&#34;content&#34;:[{&#34;type&#34;:&#34;heading&#34;,&#34;attrs&#34;:{&#34;level&#34;:2},&#34;content&#34;:[{&#34;text&#34;:&#34;Apply for a bank account &#34;,&#34;type&#34;:&#34;text&#34;},{&#34;text&#34;:&#34;in minutes&#34;,&#34;type&#34;:&#34;text&#34;,&#34;marks&#34;:[{&#34;type&#34;:&#34;highlight&#34;,&#34;attrs&#34;:{&#34;color&#34;:&#34;#9E4141&#34;}}]},{&#34;text&#34;:&#34; from your phone.&#34;,&#34;type&#34;:&#34;text&#34;}]},{&#34;type&#34;:&#34;paragraph&#34;,&#34;content&#34;:[{&#34;text&#34;:&#34;Award-winning everyday accounts with no monthly fees, industry-leading security features and a Mastercard™ bank card.&#34;,&#34;type&#34;:&#34;text&#34;}]},{&#34;type&#34;:&#34;paragraph&#34;},{&#34;type&#34;:&#34;blok&#34;,&#34;attrs&#34;:{&#34;id&#34;:&#34;7a5e8cb2-0f2e-4c1e-b033-d0483f864a9d&#34;,&#34;body&#34;:[{&#34;_uid&#34;:&#34;i-b1a14044-8906-4ce8-a61e-a80e89241fe3&#34;,&#34;href&#34;:&#34;/apply/&#34;,&#34;text&#34;:&#34;Apply now&#34;,&#34;route&#34;:&#34;&#34;,&#34;variant&#34;:&#34;teal&#34;,&#34;_editable&#34;:null,&#34;component&#34;:&#34;apply_now_button&#34;}]}}]},&#34;_editable&#34;:null,&#34;component&#34;:&#34;rich_text_webflow&#34;,&#34;backgroundColour&#34;:&#34;&#34;}],&#34;_editable&#34;:null,&#34;component&#34;:&#34;webflow-cta-box-section&#34;,&#34;smallMargins&#34;:true,&#34;smallPadding&#34;:true,&#34;background_colour&#34;:&#34;&#34;}],&#34;no_index&#34;:false,&#34;_editable&#34;:null,&#34;component&#34;:&#34;article_index&#34;,&#34;seo_title&#34;:&#34;Noteworthy | Starling Blog&#34;,&#34;description&#34;:&#34;Noteworthy brings you stories and guides, explainers and interviews. Explore money topics, including budgeting and saving, and real-life &#39;money truths&#39;.&#34;,&#34;share_image&#34;:{&#34;id&#34;:16975547,&#34;alt&#34;:&#34;Noteworthy share image&#34;,&#34;name&#34;:&#34;&#34;,&#34;focus&#34;:&#34;&#34;,&#34;title&#34;:&#34;&#34;,&#34;source&#34;:&#34;&#34;,&#34;filename&#34;:&#34;/images/1024x512/3761d81129/noteworthy-share-image.jpg&#34;,&#34;copyright&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;meta_data&#34;:{&#34;alt&#34;:&#34;Noteworthy share image&#34;,&#34;title&#34;:&#34;&#34;,&#34;source&#34;:&#34;&#34;,&#34;copyright&#34;:&#34;&#34;},&#34;is_external_url&#34;:false},&#34;canonical_url&#34;:&#34;&#34;,&#34;change_reason&#34;:&#34;Last digit widget &#34;,&#34;ready_for_review&#34;:true,&#34;hide_from_sitemap&#34;:false,&#34;schema_org_entities&#34;:[],&#34;marketing_approval_link&#34;:&#34;All content approved&#34;},&#34;slug&#34;:&#34;blog&#34;,&#34;full_slug&#34;:&#34;blog/&#34;,&#34;sort_by_date&#34;:null,&#34;position&#34;:-4660,&#34;tag_list&#34;:[],&#34;is_startpage&#34;:true,&#34;parent_id&#34;:356146590,&#34;meta_data&#34;:null,&#34;group_id&#34;:&#34;988cbd29-7f95-4144-aa5b-1584c38cc6a7&#34;,&#34;first_published_at&#34;:&#34;2024-08-12T10:02:48.379Z&#34;,&#34;release_id&#34;:null,&#34;lang&#34;:&#34;default&#34;,&#34;path&#34;:null,&#34;alternates&#34;:[],&#34;default_full_slug&#34;:null,&#34;translated_slugs&#34;:null},&#34;rels&#34;:[{&#34;uuid&#34;:&#34;09c1e906-f916-443e-b6b8-219907050205&#34;,&#34;full_slug&#34;:&#34;/blog/trend-vetter-the-last-digit-widget/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Good with money&#34;,&#34;author&#34;:&#34;Mike Rampton&#34;,&#34;title&#34;:&#34;Trend Vetter: Last Digit Widget.&#34;,&#34;preview_title&#34;:&#34;Trend Vetter: Last Digit Widget.&#34;,&#34;categories&#34;:[&#34;Money Masters&#34;],&#34;description&#34;:&#34; A nice combo of high-tech and low-fi. The best bit? It encourages a daily, habitual money move.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:130796820740649,&#34;filename&#34;:&#34;/images/1080x720/6eac76109c/nw-header-trend-vetter-1.jpg&#34;,&#34;name&#34;:&#34;/images/1080x720/6eac76109c/nw-header-trend-vetter-1.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2026-01-07 10:05&#34;}},{&#34;uuid&#34;:&#34;18208c45-b745-4bd3-b580-47eacbed1aa1&#34;,&#34;full_slug&#34;:&#34;/blog/lets-talk-money/whats-your-money-language/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Let&#39;s talk money&#34;,&#34;author&#34;:&#34;Ellie Austin Williams \u0026 Hayley Quinn&#34;,&#34;title&#34;:&#34;What’s your Money Language?&#34;,&#34;preview_title&#34;:&#34;What’s your Money Language?&#34;,&#34;categories&#34;:[&#34;Let&#39;s talk money&#34;],&#34;description&#34;:&#34;Are you ‘Acts of Finance’ or ‘Lifestyle Enrichment’? When talking about money, here’s why your language matters. Use our new tool to find yours.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:119411439558725,&#34;filename&#34;:&#34;/images/1196x795/8618a3aac9/ltm-article-header.jpg&#34;,&#34;name&#34;:&#34;/images/1196x795/8618a3aac9/ltm-article-header.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2025-12-11 09:00&#34;}},{&#34;uuid&#34;:&#34;19eee3f4-19ee-4f35-af90-3f16863e27cc&#34;,&#34;full_slug&#34;:&#34;/blog/great-lock-in/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Trend Vetter&#34;,&#34;author&#34;:&#34;Amelia Tait&#34;,&#34;title&#34;:&#34;The Great Lock In&#34;,&#34;preview_title&#34;:&#34;The Great Lock In&#34;,&#34;categories&#34;:[&#34;Money Masters&#34;],&#34;description&#34;:&#34;I tried the money saving hack that’s all over TikTok. But how did ‘locking in’ affect my quality of life?&#34;,&#34;preview_image&#34;:{&#34;id&#34;:119854857730518,&#34;filename&#34;:&#34;/images/1080x720/cfd70dae93/great-lock-in-article-hero.jpg&#34;,&#34;name&#34;:&#34;/images/1080x720/cfd70dae93/great-lock-in-article-hero.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2025-12-11 10:05&#34;}},{&#34;uuid&#34;:&#34;1b19d042-460d-48fe-b26a-90a2e774bac0&#34;,&#34;full_slug&#34;:&#34;/blog/lifestyle-creep-what-it-is-how-to-avoid-it/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Good with money&#34;,&#34;author&#34;:&#34;Vicky Reynal&#34;,&#34;title&#34;:&#34;What is ‘lifestyle creep’ and how can I avoid it?&#34;,&#34;preview_title&#34;:&#34;What is ‘lifestyle creep’ and how can I avoid it?&#34;,&#34;categories&#34;:[&#34;Money Masters&#34;],&#34;description&#34;:&#34;A monthly meal-out becomes weekly. Why Brighton when you could opt for Ibiza? Daily takeaway coffees become ‘a must’. Are you a victim of ‘lifestyle creep’?&#34;,&#34;preview_image&#34;:{&#34;id&#34;:19757126,&#34;filename&#34;:&#34;/images/2160x1440/d819e3516c/lc_header.jpg&#34;,&#34;name&#34;:&#34;/images/2160x1440/d819e3516c/lc_header.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2025-01-22 10:05&#34;}},{&#34;uuid&#34;:&#34;3d9fd934-15ab-455f-9fc1-1e3890bd53ca&#34;,&#34;full_slug&#34;:&#34;/blog/tips-to-keeping-your-pins-passwords-safe/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Fighting fraud&#34;,&#34;author&#34;:&#34;Starling Financial Crime team&#34;,&#34;title&#34;:&#34;PINs and passwords: Tips to help you stay safe&#34;,&#34;preview_title&#34;:&#34;PINs and passwords: helping you stay safe&#34;,&#34;categories&#34;:[&#34;Fraud&#34;],&#34;description&#34;:&#34;Advice on creating and maintaining secure login details to help keep your device and accounts safe.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:16872119,&#34;filename&#34;:&#34;/images/1080x720/4a83ad4cbd/pins-and-passwords_-tips-to-help-you-stay-safe.jpg&#34;,&#34;name&#34;:&#34;/images/1080x720/4a83ad4cbd/pins-and-passwords_-tips-to-help-you-stay-safe.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2022-10-14 12:00&#34;}},{&#34;uuid&#34;:&#34;85d35156-bd41-4e5a-8350-3db1cda37323&#34;,&#34;full_slug&#34;:&#34;/blog/joint-spending-understanding-where-your-money-is-going/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Joined at the Chip&#34;,&#34;author&#34;:&#34;Paul Henderson&#34;,&#34;title&#34;:&#34;“I kid myself that I wear the financial trousers.”&#34;,&#34;preview_title&#34;:&#34;“I kid myself that I wear the financial trousers.”&#34;,&#34;categories&#34;:[&#34;Money Truths&#34;,&#34;Family&#34;],&#34;description&#34;:&#34;A married couple opens their first joint account - 25 years after tying the knot.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:16897992,&#34;filename&#34;:&#34;/images/2160x1440/0651fd16c8/joint-spending-understanding-where-your-money-is-going-header.jpg&#34;,&#34;name&#34;:&#34;/images/2160x1440/0651fd16c8/joint-spending-understanding-where-your-money-is-going-header.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2024-08-13 10:55&#34;}},{&#34;uuid&#34;:&#34;8b72969f-c565-4393-9a94-4d6b1fe28f4a&#34;,&#34;full_slug&#34;:&#34;/blog/protecting-yourself-from-app-fraud/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Fighting fraud&#34;,&#34;author&#34;:&#34;Starling Financial Crime Specialist&#34;,&#34;title&#34;:&#34;How to protect yourself from APP fraud&#34;,&#34;preview_title&#34;:&#34;How to protect yourself from APP fraud&#34;,&#34;categories&#34;:[&#34;Fraud&#34;],&#34;description&#34;:&#34;When a criminal tricks someone into willingly making a bank transfer to them, this is known as APP (Authorised Push Payment) fraud. Learn how to protect yourself.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:17294141,&#34;filename&#34;:&#34;/images/2160x1440/1c275d0622/app-fraud-article-header.jpg&#34;,&#34;name&#34;:&#34;/images/2160x1440/1c275d0622/app-fraud-article-header.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2024-10-04 08:59&#34;}},{&#34;uuid&#34;:&#34;967d64ff-b3b7-4923-a9f7-c7ee9b1db5d6&#34;,&#34;full_slug&#34;:&#34;/blog/couples-money-discussing-spending-with-your-partner/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Joined at the Chip&#34;,&#34;author&#34;:&#34;Lucy Gornall&#34;,&#34;title&#34;:&#34;“We’d never even discussed our salaries.”&#34;,&#34;preview_title&#34;:&#34;“We’ve never discussed salaries.”&#34;,&#34;categories&#34;:[&#34;Money Truths&#34;],&#34;description&#34;:&#34;Before they opened a joint account, the money topic was completely off limits.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:16899255,&#34;filename&#34;:&#34;/images/2160x1440/0cae1c8a75/couples-money-discussing-spending-with-your-partner-header.jpg&#34;,&#34;name&#34;:&#34;/images/2160x1440/0cae1c8a75/couples-money-discussing-spending-with-your-partner-header.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2024-08-13 09:48&#34;}},{&#34;uuid&#34;:&#34;a74ad4c1-a6d4-461b-bf56-e9c9a744f4e1&#34;,&#34;full_slug&#34;:&#34;/blog/going-sober-challenge/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Saving&#34;,&#34;author&#34;:&#34;Starling Writing Team&#34;,&#34;title&#34;:&#34;The Benefits of Dry January – How Much Will You Save?&#34;,&#34;preview_title&#34;:&#34;The Benefits of Dry January&#34;,&#34;categories&#34;:[&#34;Money Masters&#34;],&#34;description&#34;:&#34; A month without alcohol can boost your wallet and the health benefits are pretty easy to shout about too. How much could you save by ditching the drinks for 31 days?&#34;,&#34;preview_image&#34;:{&#34;id&#34;:19623452,&#34;filename&#34;:&#34;/images/2160x1440/e49df04270/sober-for-31-days-header.jpg&#34;,&#34;name&#34;:&#34;/images/2160x1440/e49df04270/sober-for-31-days-header.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2025-12-19 10:05&#34;}},{&#34;uuid&#34;:&#34;b19251d4-82fe-40fa-a518-c16653b33cc2&#34;,&#34;full_slug&#34;:&#34;/blog/last-digit-widget-psychologist-interview/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Last Digit Widget&#34;,&#34;author&#34;:&#34;Vicky Reynal&#34;,&#34;title&#34;:&#34;Stimulus. Routine. Reward.&#34;,&#34;preview_title&#34;:&#34;Stimulus. Routine. Reward.&#34;,&#34;categories&#34;:[&#34;Money Masters&#34;],&#34;description&#34;:&#34;Why Starling’s Last Digit Widget will boost your financial resilience as a simple micro-habit.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:130738953330265,&#34;filename&#34;:&#34;/images/1080x720/17bd506190/therapist-headshot.jpg&#34;,&#34;name&#34;:&#34;/images/1080x720/17bd506190/therapist-headshot.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2026-01-07 10:05&#34;}},{&#34;uuid&#34;:&#34;ba793773-99f5-4f61-9676-69d9d0be68db&#34;,&#34;full_slug&#34;:&#34;/blog/fight-fraud-call-159-if-you-suspect-a-scam/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Fighting fraud&#34;,&#34;author&#34;:&#34;Team Starling&#34;,&#34;title&#34;:&#34;Call 159 if you suspect a scam&#34;,&#34;preview_title&#34;:&#34;Suspect a scam? Call 159 - the fraud hotline&#34;,&#34;categories&#34;:[&#34;Fraud&#34;],&#34;description&#34;:&#34;If you’re contacted by someone claiming to be from your bank, stop, hang up and dial 159: the hotline designed to fight fraud. It’s the number you can trust to get you through to your bank safely and securely.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:16872250,&#34;filename&#34;:&#34;/images/1080x720/11b822df8e/call-159-if-you-suspect-a-scam.jpg&#34;,&#34;name&#34;:&#34;/images/1080x720/11b822df8e/call-159-if-you-suspect-a-scam.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2024-04-09 12:59&#34;}},{&#34;uuid&#34;:&#34;be763924-e2d8-4067-b760-71ee23726ec7&#34;,&#34;full_slug&#34;:&#34;/blog/managing-shared-spending-as-a-couple/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Joined at the Chip&#34;,&#34;author&#34;:&#34;Calypso Barnum-Bobb&#34;,&#34;title&#34;:&#34;“Starting a family could cost us £25,000.”&#34;,&#34;preview_title&#34;:&#34;“Starting a family could cost us £25,000.”&#34;,&#34;categories&#34;:[&#34;Money Truths&#34;],&#34;description&#34;:&#34;Engaged and ready for a family, this young couple begin budgeting for big plans.&#34;,&#34;preview_image&#34;:{&#34;id&#34;:16897164,&#34;filename&#34;:&#34;/images/2160x1440/14ed9fb8f0/managing-shared-spending-as-a-couple-header.jpg&#34;,&#34;name&#34;:&#34;/images/2160x1440/14ed9fb8f0/managing-shared-spending-as-a-couple-header.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2024-08-13 11:25&#34;}},{&#34;uuid&#34;:&#34;cefed913-3657-46ce-b2b4-71199ab8c818&#34;,&#34;full_slug&#34;:&#34;/blog/managing-joint-finances/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Joined at the Chip&#34;,&#34;author&#34;:&#34;Anonymous contributor&#34;,&#34;title&#34;:&#34;“Mums usually take the hit. I need to up my game.”&#34;,&#34;preview_title&#34;:&#34;“Turns out, mums usually take the hit.”&#34;,&#34;categories&#34;:[&#34;Money Truths&#34;],&#34;description&#34;:&#34;Busy parents trial our joint account. The result? An important realisation for a young dad. &#34;,&#34;preview_image&#34;:{&#34;id&#34;:17138804,&#34;filename&#34;:&#34;/images/2040x1440/2fe3796ee0/joined-at-the-chip-header-5.jpg&#34;,&#34;name&#34;:&#34;/images/2040x1440/2fe3796ee0/joined-at-the-chip-header-5.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2024-08-29 11:49&#34;}},{&#34;uuid&#34;:&#34;f943e380-c759-4265-add2-1da628a3cc85&#34;,&#34;full_slug&#34;:&#34;/blog/how-to-stay-safe-from-identity-theft/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Fighting fraud&#34;,&#34;author&#34;:&#34;Starling Financial Crime Specialist&#34;,&#34;title&#34;:&#34;Anyone’s identity can be stolen these days &#34;,&#34;preview_title&#34;:&#34;Anyone’s identity can be stolen these days&#34;,&#34;categories&#34;:[&#34;Fraud&#34;],&#34;description&#34;:&#34;Have you got the right controls in place to keep your personal information safe from criminals?&#34;,&#34;preview_image&#34;:{&#34;id&#34;:17875996,&#34;filename&#34;:&#34;/images/2160x1440/e4ac0361c1/how-to-stay-safe-from-identity-theft-1.jpg&#34;,&#34;name&#34;:&#34;/images/2160x1440/e4ac0361c1/how-to-stay-safe-from-identity-theft-1.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2024-11-01 23:59&#34;}},{&#34;uuid&#34;:&#34;ff4d400d-2db7-42ef-8661-6874e4e54285&#34;,&#34;full_slug&#34;:&#34;/blog/impersonation-scams-what-you-need-to-know/&#34;,&#34;content&#34;:{&#34;eyebrow&#34;:&#34;Fighting fraud&#34;,&#34;author&#34;:&#34;Starling Financial Crime Specialist&#34;,&#34;title&#34;:&#34;Six tips to combat impersonation scams &#34;,&#34;preview_title&#34;:&#34;Six tips to combat impersonation scams &#34;,&#34;categories&#34;:[&#34;Fraud&#34;],&#34;description&#34;:&#34;Have you got the right controls in place to keep your personal information safe from criminals?&#34;,&#34;preview_image&#34;:{&#34;id&#34;:18375055,&#34;filename&#34;:&#34;/images/4320x2880/191dab0fdf/impersonation-scams_-what-you-need-to-know.jpg&#34;,&#34;name&#34;:&#34;/images/4320x2880/191dab0fdf/impersonation-scams_-what-you-need-to-know.jpg&#34;,&#34;alt&#34;:&#34;&#34;,&#34;fieldtype&#34;:&#34;asset&#34;,&#34;title&#34;:&#34;&#34;,&#34;focus&#34;:null},&#34;date&#34;:&#34;2024-11-01 23:59&#34;}}],&#34;draftMode&#34;:false,&#34;categories&#34;:[{&#34;full_slug&#34;:&#34;/blog/category/business/&#34;,&#34;uuid&#34;:&#34;9c4af548-295d-433d-95e1-f47eb494c367&#34;,&#34;content&#34;:{&#34;title&#34;:&#34;Business&#34;}},{&#34;full_slug&#34;:&#34;/blog/category/family/&#34;,&#34;uuid&#34;:&#34;2f57227e-0837-4389-9aa4-745f3088adfd&#34;,&#34;content&#34;:{&#34;title&#34;:&#34;Family&#34;}},{&#34;full_slug&#34;:&#34;/blog/category/fraud/&#34;,&#34;uuid&#34;:&#34;aab656d8-c199-40fe-b120-f07ebf128c69&#34;,&#34;content&#34;:{&#34;title&#34;:&#34;Fraud&#34;}},{&#34;full_slug&#34;:&#34;/blog/category/lets-talk-money/&#34;,&#34;uuid&#34;:&#34;35636a6f-1fac-4636-ba65-b3f3598b14cf&#34;,&#34;content&#34;:{&#34;title&#34;:&#34;Let&#39;s talk money&#34;}},{&#34;full_slug&#34;:&#34;/blog/category/life-at-starling/&#34;,&#34;uuid&#34;:&#34;da229a58-acab-40e8-b9fc-e21209555547&#34;,&#34;content&#34;:{&#34;title&#34;:&#34;Life at Starling&#34;}},{&#34;full_slug&#34;:&#34;/blog/category/money-languages/&#34;,&#34;uuid&#34;:&#34;250b1dc0-f8c7-429a-8aed-92ff855b17d9&#34;,&#34;content&#34;:{&#34;title&#34;:&#34;Money languages&#34;}},{&#34;full_slug&#34;:&#34;/blog/category/money-masters/&#34;,&#34;uuid&#34;:&#34;67a63325-ae99-4995-99a7-7568fbdf5f8d&#34;,&#34;content&#34;:{&#34;title&#34;:&#34;Money Masters&#34;}},{&#34;full_slug&#34;:&#34;/blog/category/money-truths/&#34;,&#34;uuid&#34;:&#34;e5603000-d35c-4028-a215-a8f5de474dc4&#34;,&#34;content&#34;:{&#34;title&#34;:&#34;Money Truths&#34;}}],&#34;announcement&#34;:null},&#34;__N_SSG&#34;:true},&#34;page&#34;:&#34;/blog&#34;,&#34;query&#34;:{},&#34;buildId&#34;:&#34;euQXb0TNRciAwoDChb8Ws&#34;,&#34;isFallback&#34;:false,&#34;gsp&#34;:true,&#34;scriptLoader&#34;:[]}
+    </script>
+  </body>
+</html>
