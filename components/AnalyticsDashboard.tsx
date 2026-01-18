@@ -40,7 +40,7 @@ export const AnalyticsDashboard: React.FC = () => {
                     {/* 1. Profile Card (Top Left) */}
                     <div className="md:col-span-1 bg-white/5 border border-white/5 rounded-2xl p-4 flex flex-row md:flex-col items-center gap-4 text-center">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden">
-                            <img src="/JayHutchLogo.jpg" alt="Profile" className="w-full h-full object-cover" />
+                            <img src="/JayHutchLogo.webp" alt="Profile" className="w-full h-full object-cover" />
                         </div>
                         <div className="text-left md:text-center">
                             <h3 className="text-white font-bold text-sm md:text-base">Jayhutchh</h3>

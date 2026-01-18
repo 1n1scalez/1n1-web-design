@@ -3,7 +3,7 @@ title: "The 3 Pillars of Automated Client Acquisition"
 excerpt: "Stop relying on referrals. Here is the exact infrastructure we use to generate 5-10 qualified sales calls every single week without cold calling."
 date: "2025-10-24"
 tags: ["Growth Systems", "CRM", "Sales"]
-image: "/public/1n1scalez.png"
+image: "/public/1n1scalez.webp"
 ---
 
 # Stop Relying on "Hope Marketing"

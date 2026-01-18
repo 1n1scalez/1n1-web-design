@@ -6,13 +6,13 @@ import { TracingBorder } from './ui/TracingBorder';
 const testimonials = [
   {
     name: "Jay Hutch",
-    image: "/JayHutchLogo.jpg",
+    image: "/JayHutchLogo.webp",
     text: "1n1scalez revolutionized my photography business. I stopped chasing clients and started booking high-ticket shoots. My calendar is now consistently filled with qualified leads while I focus on creating.",
     rating: 5
   },
   {
     name: "Zone Constructions",
-    image: "/Zonelogo.jpg",
+    image: "/Zonelogo.webp",
     text: "Our schedule for underpinnings and basement finishes is fully booked for the next 6 months. 1n1scalez understood the construction market perfectly and delivered serious, high-value projects.",
     rating: 5
   }

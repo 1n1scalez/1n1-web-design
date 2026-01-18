@@ -42,7 +42,7 @@ export const AlcoveSection: React.FC = () => {
         >
           {/* Glow behind logo REMOVED */}
           <img
-            src="/1n1scalez.png"
+            src="/1n1scalez.webp"
             alt="1n1scalez Logo"
             className="relative w-32 md:w-56 h-auto mx-auto drop-shadow-sm"
           />
