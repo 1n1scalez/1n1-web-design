@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { StarField } from './components/StarField';
 import { Footer } from './components/Footer';
 
@@ -31,6 +32,9 @@ function App() {
 
           {/* Footer (Global) */}
           <Footer />
+
+          {/* Vercel Speed Insights */}
+          <SpeedInsights />
         </div>
       </Router>
     </HelmetProvider>
