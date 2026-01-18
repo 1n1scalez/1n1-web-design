@@ -26,45 +26,31 @@ export const Testimonials: React.FC = () => {
 
           {/* Gradient Heart Element */}
           <div className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] pointer-events-none z-0 select-none">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
               <defs>
-                {/* Tracing Beam Gradient */}
-                <linearGradient id="tracerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#b3001b" />     {/* Red */}
-                  <stop offset="50%" stopColor="#a855f7" />     {/* Purple */}
-                  <stop offset="100%" stopColor="#b3001b" />    {/* Red */}
+                {/* Purple to Blue Gradient Stroke */}
+                <linearGradient id="heartTracerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#a855f7" />  {/* Purple-500 */}
+                  <stop offset="100%" stopColor="#3b82f6" /> {/* Blue-500 */}
                 </linearGradient>
-
-                {/* Inner Dark Fill */}
-                <linearGradient id="heartFill" x1="50%" y1="0%" x2="50%" y2="100%">
-                  <stop offset="0%" stopColor="#1f2937" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#000000" stopOpacity="0" />
-                </linearGradient>
-
-                {/* Top Half Mask - Adjusted for stronger fade */}
-                <mask id="topHalfMask">
-                  <linearGradient id="maskGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="white" stopOpacity="1" />
-                    <stop offset="40%" stopColor="white" stopOpacity="1" />
-                    <stop offset="65%" stopColor="black" stopOpacity="0" />
-                  </linearGradient>
-                  <rect width="100%" height="100%" fill="url(#maskGradient)" />
-                </mask>
               </defs>
 
-              {/* Group applied with mask to hide bottom half of EVERYTHING (fill, border, tracer) */}
-              <g mask="url(#topHalfMask)">
-                {/* Base Layer: Dark Body + Subtle Outline */}
-                <path
-                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                  fill="url(#heartFill)"
-                  stroke="#b3001b"
-                  strokeOpacity="0.2"
-                  strokeWidth="0.5"
-                />
+              {/* Base Track (Subtle) */}
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                stroke="#ffffff"
+                strokeOpacity="0.05"
+                strokeWidth="0.5"
+              />
 
-
-              </g>
+              {/* Animated Tracer */}
+              <path
+                className="tracer-path"
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                stroke="url(#heartTracerGradient)"
+                strokeWidth="0.3"
+                strokeLinecap="round"
+              />
             </svg>
           </div>
 

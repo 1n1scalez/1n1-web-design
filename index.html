@@ -68,6 +68,29 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #444;
     }
+
+    /* Optimized SVG Stroke Animation */
+    @keyframes trace {
+      to {
+        stroke-dashoffset: -50;
+        /* Matches approx path length for loop */
+      }
+    }
+
+    .tracer-path {
+      stroke-dasharray: 10 40;
+      /* Short dash, long gap */
+      stroke-dashoffset: 0;
+      animation: trace 6s linear infinite;
+      will-change: stroke-dashoffset;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tracer-path {
+        animation: none;
+        stroke-dasharray: 0;
+      }
+    }
   </style>
   <script type="importmap">
 {
