@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       <div className="container mx-auto px-6 text-center">
         {/* Tagline */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -23,7 +23,8 @@ export const Hero: React.FC = () => {
         </motion.div>
 
         {/* Hook */}
-        <motion.h1 
+        {/* Hook */}
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -33,7 +34,7 @@ export const Hero: React.FC = () => {
         </motion.h1>
 
         {/* Subtext */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -43,33 +44,34 @@ export const Hero: React.FC = () => {
         </motion.p>
 
         {/* Call to Action */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="group relative px-8 py-4 bg-white text-black rounded-full font-bold text-lg overflow-hidden transition-all hover:pr-10">
+          <button className="group relative px-8 py-4 bg-white text-black rounded-full font-bold text-lg overflow-hidden transition-all hover:shadow-cosmic hover:scale-105 active:scale-95">
             Start Creating Free
             <ChevronRight className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all" size={20} />
           </button>
-          <button className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full font-bold text-lg transition-all">
+          <button className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full font-bold text-lg transition-all hover:border-white/20">
             See it in Action
           </button>
         </motion.div>
 
         {/* Hero Visual Block */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="mt-20 relative max-w-5xl mx-auto"
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10 h-full" />
-          <div className="relative p-1 bg-gradient-to-b from-white/20 to-transparent rounded-2xl">
-            <img 
-              src="https://picsum.photos/1200/800?grayscale" 
-              alt="Dashboard Preview" 
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent z-10 h-full" />
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-50" />
+          <div className="relative p-1 bg-gradient-to-b from-white/10 to-transparent rounded-2xl shadow-2xl">
+            <img
+              src="https://picsum.photos/1200/800?grayscale"
+              alt="Dashboard Preview"
               className="rounded-xl w-full border border-white/5 shadow-2xl"
             />
           </div>

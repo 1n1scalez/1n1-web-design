@@ -16,22 +16,20 @@ export const Header: React.FC = () => {
   }, []);
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-4' : 'py-8'
-      }`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-8'
+        }`}
     >
       <div className="container mx-auto px-6">
-        <nav className={`flex items-center justify-between transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-black/40 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 max-w-4xl mx-auto' 
-            : 'bg-transparent'
-        }`}>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-white to-gray-400 rounded-lg flex items-center justify-center">
-              <span className="text-black font-black text-xs">A</span>
+        <nav className={`flex items-center justify-between transition-all duration-500 ${isScrolled
+          ? 'bg-brand-black/60 backdrop-blur-xl border border-white/5 rounded-full px-6 py-3 max-w-4xl mx-auto shadow-glass'
+          : 'bg-transparent'
+          }`}>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-gradient-to-br from-white to-gray-400 rounded-lg flex items-center justify-center shadow-cosmic">
+              <span className="text-black font-black text-xs">1n1</span>
             </div>
-            <span className="text-xl font-bold tracking-tight">ALCOVE</span>
+            <span className="text-xl font-bold tracking-tight text-white">1N1SCALEZ</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
@@ -43,7 +41,7 @@ export const Header: React.FC = () => {
             </button>
           </div>
 
-          <button 
+          <button
             className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >

@@ -11,8 +11,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Inter+Tight:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap"
     rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#000000',
+              dark: '#0a0a0a',
+              accent: '#3b82f6',
+            },
+            glow: {
+              primary: 'rgba(59, 130, 246, 0.5)',
+              cosmic: 'rgba(139, 92, 246, 0.3)',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'cosmic': '0 0 50px -12px rgba(139, 92, 246, 0.25)',
+            'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+          }
+        }
+      }
+    }
+  </script>
   <style>
     body {
       font-family: 'Inter', sans-serif;

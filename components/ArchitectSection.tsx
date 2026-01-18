@@ -95,7 +95,7 @@ export const ArchitectSection: React.FC = () => {
                     >
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
                             We Don't Guess.<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b3001b] to-purple-500">We Architect.</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">We Architect.</span>
                         </h2>
                         <p className="text-gray-400 text-lg leading-relaxed mb-6">
                             Most agencies simply run generic ads and hope for the best. We build a complete <strong>Client Acquisition & CRM Engine</strong> custom-tailored to your business.
