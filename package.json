@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.4.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.26.2",
     "front-matter": "^4.0.2",
