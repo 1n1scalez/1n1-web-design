@@ -1,50 +1,36 @@
-
-import React from 'react';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { ValueProps } from './components/ValueProps';
-import { AlcoveSection } from './components/AlcoveSection';
-import { Testimonials } from './components/Testimonials';
-import { ContactForm } from './components/ContactForm';
-import { Footer } from './components/Footer';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { StarField } from './components/StarField';
-import { ArchitectSection } from './components/ArchitectSection';
-import { FAQ } from './components/FAQ';
+import { Footer } from './components/Footer';
+
+// Lazy Load components below the fold for performance
+import { Home } from './pages/Home';
+
+// Blog components will be lazy loaded
+const BlogIndex = React.lazy(() => import('./pages/BlogIndex'));
+const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-[#0a0a0a] overflow-hidden selection:bg-purple-500/30 selection:text-white">
-      {/* Background Star Animation */}
-      <StarField />
+    <HelmetProvider>
+      <Router>
+        <div className="relative min-h-screen bg-[#0a0a0a] overflow-hidden selection:bg-purple-500/30 selection:text-white">
+          {/* Background Star Animation (Global) */}
+          <StarField />
 
-      {/* Navigation - REMOVED */}
-      {/* <Header /> */}
+          {/* Main Content */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+          </Routes>
 
-      <main className="relative z-10">
-        {/* Replicated Alcove Section - Now at the start */}
-        <AlcoveSection />
-
-        {/* Value Propositions */}
-        <ValueProps />
-
-        {/* Architect Section (Added below Value Props) */}
-        <ArchitectSection />
-
-        {/* Secondary Feature Highlight Section - REMOVED */}
-        {/* <Hero /> */}
-
-        {/* Social Proof & Testimonials */}
-        <Testimonials />
-
-        {/* Conversion Section with Form */}
-        <ContactForm />
-
-        {/* FAQ Section */}
-        <FAQ />
-      </main>
-
-      <Footer />
-    </div>
+          {/* Footer (Global) */}
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

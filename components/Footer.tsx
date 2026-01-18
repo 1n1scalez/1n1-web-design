@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Facebook } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -15,6 +15,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex gap-8 text-sm text-gray-500">
+            <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-white transition-colors">Cookies</a>

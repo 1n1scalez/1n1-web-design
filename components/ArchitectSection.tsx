@@ -4,13 +4,13 @@ import { Users, Filter, CalendarCheck2, ArrowDown } from 'lucide-react';
 
 export const ArchitectSection: React.FC = () => {
     return (
-        <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
+        <section className="py-16 md:py-24 bg-[#0a0a0a] relative overflow-hidden">
             {/* Background Glows */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#b3001b]/10 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#b3001b]/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-900/10 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
 
-            <div className="container mx-auto px-6 max-w-6xl">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
                     {/* Left Column: The "Engine" Visual */}
                     <motion.div
@@ -20,7 +20,7 @@ export const ArchitectSection: React.FC = () => {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="relative z-10 bg-[#0f1115] border border-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden flex flex-col gap-6">
+                        <div className="relative z-10 bg-[#0f1115] border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl overflow-hidden flex flex-col gap-6">
 
                             {/* Step 1: Inbound Traffic */}
                             <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/5 relative">

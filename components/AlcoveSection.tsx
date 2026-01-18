@@ -10,7 +10,7 @@ export const AlcoveSection: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-visible pt-12 pb-20">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-visible pt-8 pb-16 md:pt-12 md:pb-20">
 
       {/* --- Cosmic Brand Background Effects (#b3001b) --- */}
 
@@ -19,7 +19,6 @@ export const AlcoveSection: React.FC = () => {
 
         {/* The Curved "Planet" Edge */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[100%] rounded-[100%] bg-black shadow-[0_-20px_100px_rgba(179,0,27,0.5)] border-t border-[#b3001b]/50 overflow-hidden">
-          {/* Inner glow for volume */}
           {/* Inner glow for volume */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[50px] bg-[#b3001b]/20 blur-[30px]" />
         </div>
@@ -32,31 +31,25 @@ export const AlcoveSection: React.FC = () => {
         <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-full h-[400px] bg-gradient-to-t from-[#b3001b]/20 to-transparent blur-[100px]" />
       </div>
 
-      {/* 2. Upper Atmosphere / Nebula (Subtle red tint from top/center) - REMOVED */}
-      {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 pointer-events-none opacity-30">
-        <div className="absolute top-[-20%] left-0 w-[500px] h-[500px] bg-white/5 blur-[150px] mix-blend-screen" />
-        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-white/5 blur-[150px] mix-blend-screen" />
-      </div> */}
-
-      <div className="container relative z-10 mx-auto px-6 text-center flex flex-col items-center">
+      <div className="container relative z-10 mx-auto px-4 md:px-6 text-center flex flex-col items-center">
 
         {/* Icon / Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="mb-12 relative"
+          className="mb-8 md:mb-12 relative"
         >
           {/* Glow behind logo REMOVED */}
           <img
             src="/1n1scalez.png"
             alt="1n1scalez Logo"
-            className="relative w-40 md:w-56 h-auto mx-auto drop-shadow-sm"
+            className="relative w-32 md:w-56 h-auto mx-auto drop-shadow-sm"
           />
         </motion.div>
 
         {/* Heading with Blur Reveal Animation */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1] md:leading-[1.1] text-white max-w-5xl">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 md:mb-8 leading-[1.1] md:leading-[1.1] text-white max-w-5xl">
           <BlurReveal delay={0.2}>
             Ready to Get 5 New Clients
           </BlurReveal>
