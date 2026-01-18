@@ -12,7 +12,7 @@ export const AnalyticsDashboard: React.FC = () => {
             <div className="relative z-10 bg-[#0f1115]/90 rounded-[22px] p-6 md:p-8 w-full border border-white/5 overflow-hidden">
 
                 {/* Top Header - Live Indicator */}
-                <div className="flex justify-end mb-8">
+                <div className="flex justify-center md:justify-end mb-8">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/5">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
