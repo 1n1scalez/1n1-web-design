@@ -55,9 +55,9 @@ export const AlcoveSection: React.FC = () => {
 
         {/* Editorial Headline */}
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight text-white mb-6 leading-[1.05] md:leading-[1.1]">
-          <span className="block mb-2">Ready to Get 5 New Clients</span>
+          <span className="block mb-2">Ready to Book 5-10 Qualified</span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-amber-400 font-bold">
-            Within the Next 30 Days?
+            Sales Calls This Month?
           </span>
         </h1>
 
@@ -68,8 +68,8 @@ export const AlcoveSection: React.FC = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
         >
-          Automated acquisition systems & CRM infrastructure. <br className="hidden md:block" />
-          You handle the appointments; we handle the rest.
+          We build custom client acquisition systems with CRM automation, lead funnels, and website infrastructure—<br className="hidden md:block" />
+          everything you need to scale without burning out.
         </motion.p>
 
         {/* Visual / Dashboard (Acting as Social Proof) */}
@@ -93,7 +93,7 @@ export const AlcoveSection: React.FC = () => {
             onClick={scrollToContact}
             className="px-10 py-4 bg-[#b3001b] hover:bg-[#920016] text-white rounded-lg text-lg font-medium transition-all shadow-cosmic hover:scale-105 flex items-center gap-2 group"
           >
-            Scale My Business
+            Get My Free Roadmap
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </motion.div>

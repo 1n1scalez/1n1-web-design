@@ -22,15 +22,14 @@ export const Hero: React.FC = () => {
           Loved by 2,000+ creators
         </motion.div>
 
-        {/* Hook */}
-        {/* Hook */}
+        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] max-w-4xl mx-auto"
         >
-          The ultimate space for your <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">creative flow.</span>
+          Stop Chasing Clients. <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Start Attracting Them on Autopilot.</span>
         </motion.h1>
 
         {/* Subtext */}
@@ -40,7 +39,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          Curate, organize, and analyze your digital workspace without the noise. Built for designers, developers, and thinkers who demand pure focus.
+          We build predictable lead generation systems for service-based businesses—so you can focus on closing deals, not hunting for them.
         </motion.p>
 
         {/* Call to Action */}
@@ -50,12 +49,18 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <button className="group relative px-8 py-4 bg-white text-black rounded-full font-bold text-lg overflow-hidden transition-all hover:shadow-cosmic hover:scale-105 active:scale-95">
-            Start Creating Free
+          <button
+            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            className="group relative px-8 py-4 bg-white text-black rounded-full font-bold text-lg overflow-hidden transition-all hover:shadow-cosmic hover:scale-105 active:scale-95"
+          >
+            Get My Free Growth Roadmap
             <ChevronRight className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all" size={20} />
           </button>
-          <button className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full font-bold text-lg transition-all hover:border-white/20">
-            See it in Action
+          <button
+            onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 rounded-full font-bold text-lg transition-all hover:border-white/20"
+          >
+            See How It Works
           </button>
         </motion.div>
 

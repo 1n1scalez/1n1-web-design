@@ -7,12 +7,12 @@ interface FormData {
   lastName: string;
   email: string;
   phone: string;
+  businessType: string;
   revenue: string;
-  adBudget: string;
-  closingRate: string;
+  marketingBudget: string;
 }
 
-const TOTAL_STEPS = 5;
+const TOTAL_STEPS = 4;
 
 export const ContactForm: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -21,9 +21,9 @@ export const ContactForm: React.FC = () => {
     lastName: '',
     email: '',
     phone: '',
+    businessType: '',
     revenue: '',
-    adBudget: '',
-    closingRate: ''
+    marketingBudget: ''
   });
   const [showModal, setShowModal] = useState(false);
 
@@ -98,11 +98,10 @@ export const ContactForm: React.FC = () => {
   // Helper to determine if we can proceed
   const canProceed = () => {
     switch (currentStep) {
-      case 1: return formData.firstName.trim() !== '' && formData.lastName.trim() !== '';
-      case 2: return formData.email.trim() !== '' && formData.phone.trim() !== '';
+      case 1: return formData.firstName.trim() !== '' && formData.lastName.trim() !== '' && formData.email.trim() !== '' && formData.phone.trim() !== '';
+      case 2: return formData.businessType !== '';
       case 3: return formData.revenue !== '';
-      case 4: return formData.adBudget !== '';
-      case 5: return formData.closingRate !== '';
+      case 4: return formData.marketingBudget !== '';
       default: return false;
     }
   };
@@ -160,7 +159,7 @@ export const ContactForm: React.FC = () => {
             See Your Future <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Revenue</span>
           </h2>
           <p className="text-gray-400 text-lg">
-            Answer 5 simple questions to see exactly how many qualified leads we can add to your pipeline this month.
+            Answer 4 simple questions to see if we're a fit and get your custom growth roadmap.
           </p>
         </div>
 
@@ -189,11 +188,10 @@ export const ContactForm: React.FC = () => {
                   exit={{ opacity: 0, y: -10 }}
                   className="text-2xl font-bold text-white mb-2"
                 >
-                  {currentStep === 1 && "Let's start with your name"}
-                  {currentStep === 2 && "How can we contact you?"}
-                  {currentStep === 3 && "Current Monthly Revenue"}
-                  {currentStep === 4 && "Monthly Ad Budget"}
-                  {currentStep === 5 && "Approximate Closing Rate"}
+                  {currentStep === 1 && "Let's start with your contact info"}
+                  {currentStep === 2 && "What type of business do you run?"}
+                  {currentStep === 3 && "What's your current monthly revenue?"}
+                  {currentStep === 4 && "What's your monthly marketing budget?"}
                 </motion.h3>
               </AnimatePresence>
               <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">Question {currentStep} of {TOTAL_STEPS}</span>
@@ -232,17 +230,6 @@ export const ContactForm: React.FC = () => {
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-blue-500/50 focus:bg-white/10 transition-all outline-none"
                       />
                     </div>
-                  </motion.div>
-                )}
-
-                {currentStep === 2 && (
-                  <motion.div
-                    key="step2"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                  >
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Email Address</label>
                       <input
@@ -265,6 +252,35 @@ export const ContactForm: React.FC = () => {
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-blue-500/50 focus:bg-white/10 transition-all outline-none"
                       />
                     </div>
+                  </motion.div>
+                )}
+
+                {currentStep === 2 && (
+                  <motion.div
+                    key="step2"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto w-full"
+                  >
+                    {[
+                      'Home Services (HVAC, Plumbing, etc.)',
+                      'Professional Services (Legal, Accounting, etc.)',
+                      'Health & Wellness (Med Spa, Chiropractor, etc.)',
+                      'Other Service Business'
+                    ].map((option) => (
+                      <button
+                        key={option}
+                        onClick={() => handleSelect('businessType', option)}
+                        className={`p-4 rounded-xl border transition-all text-left flex items-center justify-between group ${formData.businessType === option
+                          ? 'bg-blue-500/20 border-blue-500 text-white'
+                          : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
+                          }`}
+                      >
+                        <span className="font-medium text-sm">{option}</span>
+                        {formData.businessType === option && <Check size={18} className="text-blue-400" />}
+                      </button>
+                    ))}
                   </motion.div>
                 )}
 
@@ -303,42 +319,20 @@ export const ContactForm: React.FC = () => {
                     {['< $1,500', '$1,500 - $5,000', '$5,000 - $10,000', '$10,000+'].map((option) => (
                       <button
                         key={option}
-                        onClick={() => handleSelect('adBudget', option)}
-                        className={`p-4 rounded-xl border transition-all text-left flex items-center justify-between group ${formData.adBudget === option
+                        onClick={() => handleSelect('marketingBudget', option)}
+                        className={`p-4 rounded-xl border transition-all text-left flex items-center justify-between group ${formData.marketingBudget === option
                           ? 'bg-blue-500/20 border-blue-500 text-white'
                           : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
                           }`}
                       >
                         <span className="font-medium">{option}</span>
-                        {formData.adBudget === option && <Check size={18} className="text-blue-400" />}
+                        {formData.marketingBudget === option && <Check size={18} className="text-blue-400" />}
                       </button>
                     ))}
                   </motion.div>
                 )}
 
-                {currentStep === 5 && (
-                  <motion.div
-                    key="step5"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto w-full"
-                  >
-                    {['Unknown', '< 10%', '10% - 25%', '> 25%'].map((option) => (
-                      <button
-                        key={option}
-                        onClick={() => handleSelect('closingRate', option)}
-                        className={`p-4 rounded-xl border transition-all text-left flex items-center justify-between group ${formData.closingRate === option
-                          ? 'bg-blue-500/20 border-blue-500 text-white'
-                          : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
-                          }`}
-                      >
-                        <span className="font-medium">{option}</span>
-                        {formData.closingRate === option && <Check size={18} className="text-blue-400" />}
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
+
               </AnimatePresence>
             </div>
 

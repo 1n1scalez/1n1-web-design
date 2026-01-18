@@ -1,26 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, TrendingUp, Clock } from 'lucide-react';
+import { Users, Settings, TrendingUp } from 'lucide-react';
 
 
 const props = [
   {
     icon: <Users className="text-blue-400" />,
-    title: "The Referral Trap",
-    description: "You can’t pay qualified staff with \"hope.\" Referrals are inconsistent. We install a predictable faucet of leads that flows on demand.",
+    problem: "You're stuck relying on referrals and word-of-mouth. It works... until it doesn't.",
+    solution: "We build predictable lead generation systems that deliver qualified prospects every week—no more feast or famine.",
     bgColor: "bg-blue-400/10"
   },
   {
-    icon: <TrendingUp className="text-[#b3001b]" />,
-    title: "The Revenue Ceiling",
-    description: "Stuck at $30k/mo? We break your ceiling by taking your winning offer and broadcasting it to thousands of fresh, qualified prospects.",
-    bgColor: "bg-[#b3001b]/10"
+    icon: <Settings className="text-purple-400" />,
+    problem: "Your leads slip through the cracks because you're juggling spreadsheets, sticky notes, and half-built systems.",
+    solution: "We set up complete CRM automation and follow-up workflows so every lead is nurtured and nothing falls through.",
+    bgColor: "bg-purple-400/10"
   },
   {
-    icon: <Clock className="text-purple-400" />,
-    title: "CRM & Tech Control",
-    description: "Leads mean nothing if they slip through the cracks. We set up your entire CRM, automation, and follow-up infrastructure so no opportunity is lost.",
-    bgColor: "bg-purple-400/10"
+    icon: <TrendingUp className="text-[#b3001b]" />,
+    problem: "You're working 60-hour weeks but still can't break past your revenue ceiling.",
+    solution: "We scale your lead flow with proven systems and infrastructure—more clients without more hustle.",
+    bgColor: "bg-[#b3001b]/10"
   }
 ];
 
@@ -39,12 +39,14 @@ export const ValueProps: React.FC = () => {
               className="h-full"
             >
               <div className="h-full bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col hover:bg-white/10 transition-colors">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${p.bgColor}`}>
+                <div className={`w - 12 h - 12 rounded - xl flex items - center justify - center mb - 6 transition - transform group - hover: scale - 110 ${p.bgColor} `}>
                   {p.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{p.title}</h3>
+                <p className="text-white font-semibold text-lg mb-4 leading-snug">
+                  {p.problem}
+                </p>
                 <p className="text-gray-400 leading-relaxed flex-grow">
-                  {p.description}
+                  {p.solution}
                 </p>
               </div>
             </motion.div>
