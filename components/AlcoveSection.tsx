@@ -18,17 +18,17 @@ export const AlcoveSection: React.FC = () => {
       <div className="absolute bottom-[-45%] md:bottom-[-60%] left-1/2 -translate-x-1/2 w-[250%] md:w-[220%] h-[1000px] pointer-events-none z-0">
 
         {/* The Curved "Planet" Edge */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[100%] rounded-[100%] bg-black shadow-[0_-20px_100px_rgba(179,0,27,0.5)] border-t border-[#b3001b]/50 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[100%] rounded-[100%] bg-black shadow-[0_-20px_60px_rgba(179,0,27,0.4)] md:shadow-[0_-20px_100px_rgba(179,0,27,0.5)] border-t border-[#b3001b]/50 overflow-hidden">
           {/* Inner glow for volume */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[50px] bg-[#b3001b]/20 blur-[30px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[50px] bg-[#b3001b]/20 blur-[15px] md:blur-[30px]" />
         </div>
 
 
         {/* Core intense atmospheric glow behind the curve */}
-        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-[#b3001b]/30 blur-[120px] rounded-full mix-blend-screen" />
+        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-[#b3001b]/30 blur-[60px] md:blur-[120px] rounded-full mix-blend-screen" />
 
         {/* Secondary softer wide glow */}
-        <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-full h-[400px] bg-gradient-to-t from-[#b3001b]/20 to-transparent blur-[100px]" />
+        <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-full h-[400px] bg-gradient-to-t from-[#b3001b]/20 to-transparent blur-[50px] md:blur-[100px]" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6 text-center flex flex-col items-center">
