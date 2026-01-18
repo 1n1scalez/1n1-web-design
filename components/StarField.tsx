@@ -15,7 +15,7 @@ export const StarField: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden hidden md:block">
       <motion.div
         className="absolute inset-0 flex"
         style={{ willChange: 'transform' }}

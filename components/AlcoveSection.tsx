@@ -25,7 +25,7 @@ export const AlcoveSection: React.FC = () => {
 
 
         {/* Core intense atmospheric glow behind the curve */}
-        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-[#b3001b]/30 blur-[60px] md:blur-[120px] rounded-full mix-blend-screen" />
+        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-[#b3001b]/30 blur-[60px] md:blur-[120px] rounded-full mix-blend-normal md:mix-blend-screen" />
 
         {/* Secondary softer wide glow */}
         <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-full h-[400px] bg-gradient-to-t from-[#b3001b]/20 to-transparent blur-[50px] md:blur-[100px]" />
