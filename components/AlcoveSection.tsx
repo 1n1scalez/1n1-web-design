@@ -12,33 +12,29 @@ export const AlcoveSection: React.FC = () => {
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-visible pt-8 pb-16 md:pt-12 md:pb-20">
 
-      {/* --- Alcove News Style Background (Blue/Purple/White) --- */}
-      <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden bg-[#0a0a0a]">
+      {/* --- Alcove "Planet Horizon" Background (Pseudo-element implementation) --- */}
+      <div className="hero__bg absolute inset-0 pointer-events-none select-none z-0 overflow-hidden bg-[#0a0a0a]
+        before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2 before:rounded-[100%]
+        before:bottom-[-65%] before:w-[220%] before:aspect-square md:before:w-[140%] md:before:bottom-[-75%]
+        before:bg-[#000000] before:z-10
+        
+        after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:rounded-[100%]
+        after:bottom-[-65%] after:w-[220%] after:aspect-square md:after:w-[140%] md:after:bottom-[-75%]
+        after:z-10 after:shadow-[0_-1px_3px_rgba(255,255,255,0.8),0_-4px_20px_rgba(100,100,255,0.3)] after:opacity-80
+      ">
 
-        {/* 1. Subtle Noise Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
+        {/* Atmosphere Glow (Above Rim) */}
+        <div className="hero__atmosphere absolute bottom-[-50px] left-1/2 -translate-x-1/2 w-[100%] h-[400px] bg-gradient-to-t from-[rgba(100,120,255,0.15)] to-transparent blur-[80px] z-20 mix-blend-screen pointer-events-none" />
+
+        {/* Stars (CSS Pattern) */}
+        <div className="absolute inset-0 opacity-40 z-0"
+          style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '50px 50px' }}
+        />
+
+        {/* Subtle Noise */}
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay z-0"
           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E")` }}
         />
-
-        {/* 2. Static Star Field (CSS Gradient) */}
-        <div className="absolute inset-0 opacity-30"
-          style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '40px 40px' }}
-        />
-
-        {/* 3. Deep Space Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#1a1b26]/20" />
-
-        {/* 4. Planet Horizon - Bottom Centered */}
-        <div className="absolute bottom-[-60%] md:bottom-[-70%] left-1/2 -translate-x-1/2 w-[200%] md:w-[150%] aspect-square rounded-[100%] bg-black z-10 overflow-hidden shadow-[0_-20px_100px_rgba(59,130,246,0.2)] border-t border-white/20">
-          {/* 4a. Bright Rim Light (White/Pale Blue) */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[3px] bg-gradient-to-r from-transparent via-white to-transparent blur-[2px] opacity-70" />
-
-          {/* 4b. Atmosphere Glow (Blue/Purple) */}
-          <div className="absolute -top-[120px] left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-blue-500/20 blur-[80px] md:blur-[120px] rounded-full mix-blend-screen" />
-
-          {/* 4c. Inner Planet Texture (Subtle) */}
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#1e1b4b]/20 to-black" />
-        </div>
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6 text-center flex flex-col items-center">
