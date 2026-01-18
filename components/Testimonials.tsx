@@ -26,12 +26,12 @@ export const Testimonials: React.FC = () => {
 
           {/* Gradient Heart Element */}
           <div className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] pointer-events-none z-0 select-none">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-[0_0_8px_rgba(179,0,27,0.5)]">
               <defs>
-                {/* Purple to Blue Gradient Stroke */}
+                {/* Red Gradient Stroke */}
                 <linearGradient id="heartTracerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#a855f7" />  {/* Purple-500 */}
-                  <stop offset="100%" stopColor="#3b82f6" /> {/* Blue-500 */}
+                  <stop offset="0%" stopColor="#ff4d4d" />   {/* Bright Red */}
+                  <stop offset="100%" stopColor="#b3001b" /> {/* Brand Red */}
                 </linearGradient>
 
                 {/* Mask to hide bottom half */}
