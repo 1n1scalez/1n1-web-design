@@ -39,7 +39,7 @@ export const ValueProps: React.FC = () => {
               className="h-full"
             >
               <div className="h-full bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col hover:bg-white/10 transition-colors">
-                <div className={`w - 12 h - 12 rounded - xl flex items - center justify - center mb - 6 transition - transform group - hover: scale - 110 ${p.bgColor} `}>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${p.bgColor}`}>
                   {p.icon}
                 </div>
                 <p className="text-white font-semibold text-lg mb-4 leading-snug">

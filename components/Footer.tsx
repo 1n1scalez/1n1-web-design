@@ -16,8 +16,8 @@ export const Footer: React.FC = () => {
 
           <div className="flex gap-8 text-sm text-gray-500">
             <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             <a href="#" className="hover:text-white transition-colors">Cookies</a>
           </div>
 

@@ -11,6 +11,10 @@ import { Home } from './pages/Home';
 const BlogIndex = React.lazy(() => import('./pages/BlogIndex'));
 const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 
+// Legal pages will be lazy loaded
+const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = React.lazy(() => import('./pages/TermsOfService'));
+
 function App() {
   return (
     <HelmetProvider>
@@ -24,6 +28,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
           </Routes>
 
           {/* Footer (Global) */}
