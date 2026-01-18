@@ -8,33 +8,41 @@ import { Testimonials } from './components/Testimonials';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { StarField } from './components/StarField';
+import { ArchitectSection } from './components/ArchitectSection';
+import { FAQ } from './components/FAQ';
 
 function App() {
   return (
     <div className="relative min-h-screen bg-[#0a0a0a] overflow-hidden selection:bg-purple-500/30 selection:text-white">
       {/* Background Star Animation */}
       <StarField />
-      
-      {/* Navigation */}
-      <Header />
-      
+
+      {/* Navigation - REMOVED */}
+      {/* <Header /> */}
+
       <main className="relative z-10">
         {/* Replicated Alcove Section - Now at the start */}
         <AlcoveSection />
-        
+
         {/* Value Propositions */}
         <ValueProps />
-        
-        {/* Secondary Feature Highlight Section */}
-        <Hero />
-        
+
+        {/* Architect Section (Added below Value Props) */}
+        <ArchitectSection />
+
+        {/* Secondary Feature Highlight Section - REMOVED */}
+        {/* <Hero /> */}
+
         {/* Social Proof & Testimonials */}
         <Testimonials />
-        
+
         {/* Conversion Section with Form */}
         <ContactForm />
+
+        {/* FAQ Section */}
+        <FAQ />
       </main>
-      
+
       <Footer />
     </div>
   );

@@ -1,78 +1,143 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { AnalyticsDashboard } from './AnalyticsDashboard';
+import { ArrowRight } from 'lucide-react';
 
 export const AlcoveSection: React.FC = () => {
+  const scrollToContact = () => {
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Replicating the soft eye-catching luminescence */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[400px] bg-white/[0.03] blur-[120px] rounded-[100%]" />
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-visible pt-12 pb-20">
+
+      {/* --- Cosmic Brand Background Effects (#b3001b) --- */}
+
+      {/* 1. Main Horizon Glow (The "sunrise" effect at the bottom) */}
+      <div className="absolute bottom-[-45%] md:bottom-[-60%] left-1/2 -translate-x-1/2 w-[250%] md:w-[220%] h-[1000px] pointer-events-none z-0">
+
+        {/* The Curved "Planet" Edge */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[100%] rounded-[100%] bg-black shadow-[0_-20px_100px_rgba(179,0,27,0.5)] border-t border-[#b3001b]/50 overflow-hidden">
+          {/* Inner glow for volume */}
+          {/* Inner glow for volume */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[50px] bg-[#b3001b]/20 blur-[30px]" />
+        </div>
+
+
+        {/* Core intense atmospheric glow behind the curve */}
+        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[80%] h-[300px] bg-[#b3001b]/30 blur-[120px] rounded-full mix-blend-screen" />
+
+        {/* Secondary softer wide glow */}
+        <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-full h-[400px] bg-gradient-to-t from-[#b3001b]/20 to-transparent blur-[100px]" />
       </div>
-      
-      <div className="container relative z-10 mx-auto px-6 text-center">
+
+      {/* 2. Upper Atmosphere / Nebula (Subtle red tint from top/center) - REMOVED */}
+      {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 pointer-events-none opacity-30">
+        <div className="absolute top-[-20%] left-0 w-[500px] h-[500px] bg-white/5 blur-[150px] mix-blend-screen" />
+        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-white/5 blur-[150px] mix-blend-screen" />
+      </div> */}
+
+      <div className="container relative z-10 mx-auto px-6 text-center flex flex-col items-center">
+
+        {/* Icon / Logo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.9, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="mb-12"
+          className="mb-12 relative"
         >
-          <img 
-            src="https://framerusercontent.com/images/Z0uikyX7ZP9ZUDE1GGlLX2tIZtQ.png" 
-            alt="Alcove Logo" 
-            className="w-40 md:w-48 h-auto mx-auto drop-shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+          {/* Glow behind logo REMOVED */}
+          <img
+            src="/1n1scalez.png"
+            alt="1n1scalez Logo"
+            className="relative w-40 md:w-56 h-auto mx-auto drop-shadow-sm"
           />
         </motion.div>
 
-        <motion.h1 
+        {/* Heading with Blur Reveal Animation */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1] md:leading-[1.1] text-white max-w-5xl">
+          <BlurReveal delay={0.2}>
+            Ready to Get 5 New Clients
+          </BlurReveal>
+          <br className="hidden md:block" />
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="bg-gradient-to-r from-[#60a5fa] via-[#a855f7] to-[#ec4899] bg-clip-text text-transparent inline-block pb-1"
+          >
+            Within the Next 30 Days?
+          </motion.span>
+        </h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, filter: "blur(5px)", y: 10 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          transition={{ duration: 1.5, delay: 1.0, ease: "easeOut" }}
+          className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light mb-12"
+        >
+          We build automated acquisition systems & CRM infrastructure for service businesses. You handle the appointments; we bring the qualified leads and set up the tech to nurture them.
+        </motion.p>
+
+        {/* Analytics Dashboard Visual - Now above CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="mt-12 mb-12 w-full max-w-5xl px-4"
+        >
+          <AnalyticsDashboard />
+        </motion.div>
+
+        {/* CTA Buttons & Social Proof */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-medium tracking-tight mb-8 leading-[0.9]"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col items-center gap-6 relative z-20"
         >
-          A <span className="opacity-60">quiet</span> place to <br />
-          <span className="font-serif-italic">see what's new.</span>
-        </motion.h1>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
+            <button
+              onClick={scrollToContact}
+              className="px-8 py-4 bg-[#b3001b] hover:bg-[#8e0016] text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(179,0,27,0.3)] hover:shadow-[0_0_30px_rgba(179,0,27,0.5)] flex items-center justify-center gap-2 group"
+            >
+              Scale My Business
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
 
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 0.8 }}
-          className="text-lg md:text-2xl text-white/50 max-w-2xl mx-auto leading-relaxed font-light mb-12"
-        >
-          Alcove is the best way to keep up with your favourite websites, newsletters, and subscriptions, without the noise.
-        </motion.p>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="flex flex-col items-center gap-8"
-        >
-           <div className="max-w-md w-full p-1 bg-white/5 border border-white/10 rounded-full flex backdrop-blur-sm focus-within:border-white/20 transition-all">
-              <input 
-                type="email" 
-                placeholder="Join the quiet revolution..." 
-                className="bg-transparent border-none outline-none flex-1 px-6 py-3 text-white placeholder:text-white/20 text-sm md:text-base"
-              />
-              <button className="bg-white text-black px-6 md:px-8 py-3 rounded-full font-bold text-sm hover:bg-gray-200 transition-all whitespace-nowrap">
-                Get Early Access
-              </button>
-           </div>
-           <p className="text-xs text-white/30 tracking-widest uppercase font-bold">No spam • No noise • Pure focus</p>
+
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/20 animate-bounce"
-      >
-        <ChevronDown size={32} strokeWidth={1} />
-      </motion.div>
     </section>
   );
 };
+
+// Helper component for the staggering blur reveal effect
+const BlurReveal: React.FC<{ children: string; delay?: number; className?: string }> = ({ children, delay = 0, className = "" }) => {
+  const words = children.split(" ");
+
+  return (
+    <span className={`inline-flex flex-wrap justify-center gap-x-3 md:gap-x-4 ${className}`}>
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, filter: "blur(12px)", y: 15, scale: 0.95 }}
+          animate={{ opacity: 1, filter: "blur(0px)", y: 0, scale: 1 }}
+          transition={{
+            duration: 1.2,
+            delay: delay + (i * 0.15),
+            ease: [0.2, 0.65, 0.3, 0.9]
+          }}
+          className="inline-block"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </span>
+  );
+};
+

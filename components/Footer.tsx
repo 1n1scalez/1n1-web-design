@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Twitter, Instagram, Github, Youtube } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -8,12 +8,12 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-white rounded-md flex items-center justify-center">
-              <span className="text-black font-black text-[10px]">A</span>
+            <div className="w-8 h-8 rounded-md flex items-center justify-center overflow-hidden">
+              <img src="/1n1scalez.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
-            <span className="text-lg font-bold tracking-tight">ALCOVE</span>
+            <span className="text-lg font-bold tracking-tight text-white font-atkinson">1N1SCALEZ</span>
           </div>
-          
+
           <div className="flex gap-8 text-sm text-gray-500">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
@@ -21,15 +21,17 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex gap-6 text-gray-400">
-            <Twitter size={20} className="hover:text-white cursor-pointer transition-colors" />
-            <Instagram size={20} className="hover:text-white cursor-pointer transition-colors" />
-            <Github size={20} className="hover:text-white cursor-pointer transition-colors" />
-            <Youtube size={20} className="hover:text-white cursor-pointer transition-colors" />
+            <a href="https://www.instagram.com/1n1scalez?igsh=aWhra2d6aHBtNHBq" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <Instagram size={20} />
+            </a>
+            <a href="https://www.facebook.com/share/1BS5V9ujY1/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <Facebook size={20} />
+            </a>
           </div>
         </div>
-        
+
         <div className="mt-12 text-center text-xs text-gray-600">
-          © 2025 Alcove Inc. All rights reserved. Designed for peace of mind.
+          © 2025 1n1scalez. All rights reserved. Built for scale.
         </div>
       </div>
     </footer>
