@@ -343,10 +343,10 @@ export const ContactForm: React.FC = () => {
             </div>
 
             {/* Footer / Navigation */}
-            <div className="flex items-center justify-between mt-8 border-t border-white/10 pt-6">
+            <div className={`flex items-center mt-8 border-t border-white/10 pt-6 ${currentStep === 1 ? 'justify-center md:justify-end' : 'justify-between'}`}>
               <button
                 onClick={prevStep}
-                className={`text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-1 ${currentStep === 1 ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+                className={`text-sm font-medium text-gray-400 hover:text-white transition-colors items-center gap-1 ${currentStep === 1 ? 'hidden' : 'flex opacity-100'}`}
               >
                 <ChevronLeft size={16} />
                 Back
