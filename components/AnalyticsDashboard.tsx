@@ -5,19 +5,7 @@ import { TrendingUp, Users, DollarSign, Calendar } from 'lucide-react';
 export const AnalyticsDashboard: React.FC = () => {
     return (
         <div className="w-full max-w-5xl mx-auto relative group">
-            {/* Spinning Tracer Border */}
-            <div className="absolute -inset-[1px] rounded-[24px] overflow-hidden">
-                <motion.div
-                    className="absolute inset-[-100%]"
-                    style={{
-                        background: 'conic-gradient(from 0deg at 50% 50%, transparent 0%, transparent 70%, #b3001b 80%, #a855f7 90%, transparent 100%)'
-                    }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                />
-            </div>
-
-            {/* Background Mask to hide the center of the gradient */}
+            {/* Static Border Background */}
             <div className="absolute inset-[1px] bg-[#0f1115] rounded-[22px] z-0" />
 
             {/* Main Content Card */}

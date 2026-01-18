@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, Clock } from 'lucide-react';
-import { TracingBorder } from './ui/TracingBorder';
+
 
 const props = [
   {
@@ -38,17 +38,15 @@ export const ValueProps: React.FC = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="h-full"
             >
-              <TracingBorder className="h-full">
-                <div className="p-8 h-full flex flex-col">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${p.bgColor}`}>
-                    {p.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">{p.title}</h3>
-                  <p className="text-gray-400 leading-relaxed flex-grow">
-                    {p.description}
-                  </p>
+              <div className="h-full bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col hover:bg-white/10 transition-colors">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${p.bgColor}`}>
+                  {p.icon}
                 </div>
-              </TracingBorder>
+                <h3 className="text-2xl font-bold mb-4">{p.title}</h3>
+                <p className="text-gray-400 leading-relaxed flex-grow">
+                  {p.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
