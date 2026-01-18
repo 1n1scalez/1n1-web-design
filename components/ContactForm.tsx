@@ -219,7 +219,6 @@ export const ContactForm: React.FC = () => {
                         onChange={handleInputChange}
                         placeholder="John"
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-blue-500/50 focus:bg-white/10 transition-all outline-none"
-                        autoFocus
                       />
                     </div>
                     <div className="space-y-2">
@@ -253,7 +252,6 @@ export const ContactForm: React.FC = () => {
                         onChange={handleInputChange}
                         placeholder="john@example.com"
                         className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:border-blue-500/50 focus:bg-white/10 transition-all outline-none"
-                        autoFocus
                       />
                     </div>
                     <div className="space-y-2">

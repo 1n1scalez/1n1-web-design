@@ -7,8 +7,6 @@ import { Footer } from './components/Footer';
 // Lazy Load components below the fold for performance
 import { Home } from './pages/Home';
 
-import { ScrollToTop } from './components/ScrollToTop';
-
 // Blog components will be lazy loaded
 const BlogIndex = React.lazy(() => import('./pages/BlogIndex'));
 const BlogPost = React.lazy(() => import('./pages/BlogPost'));
@@ -17,7 +15,6 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <ScrollToTop />
         <div className="relative min-h-screen bg-[#0a0a0a] overflow-hidden selection:bg-purple-500/30 selection:text-white">
           {/* Background Star Animation (Global) */}
           <StarField />
