@@ -50,7 +50,7 @@ export const AlcoveSection: React.FC = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-10 md:mb-12"
         >
-          <img src="/logo.png" alt="1n1scalez" className="w-32 md:w-40 h-auto opacity-90 mx-auto" />
+          <img src="/logo.png" alt="1n1scalez" className="w-48 md:w-64 h-auto opacity-90 mx-auto" />
         </motion.div>
 
         {/* Editorial Headline */}

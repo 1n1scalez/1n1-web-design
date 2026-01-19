@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
           : 'bg-transparent'
           }`}>
           <Link to="/" className="flex items-center gap-3">
-            <img src="/logo.png" alt="1N1SCALEZ" className="h-14 md:h-24 w-auto object-contain" />
+            <img src="/logo.png" alt="1N1SCALEZ" className="h-20 md:h-32 w-auto object-contain" />
           </Link>
         </nav>
       </div>
