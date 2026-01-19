@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-md flex items-center justify-center overflow-hidden">
-              <img src="/1n1scalez.webp" alt="Logo" className="w-full h-full object-contain" />
+              <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
             <span className="text-lg font-bold tracking-tight text-white font-atkinson">1N1SCALEZ</span>
           </div>

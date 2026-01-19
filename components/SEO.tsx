@@ -13,7 +13,7 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({
     title,
     description,
-    image = '/1n1scalez.webp',
+    image = '/logo.png',
     type = 'website',
     url = typeof window !== 'undefined' ? window.location.href : ''
 }) => {
@@ -48,7 +48,7 @@ export const SEO: React.FC<SEOProps> = ({
             "@type": "Organization",
             "name": "${siteName}",
             "url": "https://1n1scalez.com",
-            "logo": "https://1n1scalez.com/1n1scalez.webp",
+            "logo": "https://1n1scalez.com/logo.png",
             "sameAs": [
               "https://www.instagram.com/1n1scalez",
               "https://www.facebook.com/share/1BS5V9ujY1/"
